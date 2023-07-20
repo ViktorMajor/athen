@@ -60,6 +60,13 @@ body {
 }
 
 .welcome {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(7, 25, 82, 0.401)),
     url("athen.webp");
   background-size: cover;
@@ -107,7 +114,6 @@ header {
   position: absolute;
   bottom: 0;
   left: 0;
-
   height: 27px;
   width: 100%;
   background: linear-gradient(to right, #ffffff, #fca34a); /* Gradiens háttér */
@@ -166,7 +172,7 @@ header a {
   font-family: "Montserrat", sans-serif;
   margin: 0;
   line-height: 0.8;
-  font-size: 125px;
+  font-size: 105px;
   font-weight: 700;
   letter-spacing: -3px;
   text-shadow: 0 0 1px #000000;
@@ -188,7 +194,7 @@ header a {
 
 .text-2 p,
 .contact {
-  font-size: 40px;
+  font-size: 35px;
   text-shadow: 0 0 1px #000000;
 }
 
