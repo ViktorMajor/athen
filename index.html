@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Viktor Major</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="cursor"></div>
+    <header>
+      <div class="left-box">
+        <a id="welcome-a" href="#welcome">
+          <p>welcome</p>
+        </a>
+        <a id="about-a" href="#about">
+          <p>about</p>
+        </a>
+        <a id="projects-a" href="#projects">
+          <p>works</p>
+        </a>
+        <a id="contacts-a" href="#contact-page">
+          <p>contact</p>
+        </a>
+      </div>
+      <div class="right-box">
+        <h1>VIKTOR MAJOR</h1>
+      </div>
+      <div id="scroll-border"></div>
+    </header>
+    <div class="welcome" id="welcome">
+      <div class="main-wrapper">
+        <div class="text-1">
+          <p>createve</p>
+          <p class="large-text">FRONT-END</p>
+          <p class="large-text">ENGINEER</p>
+        </div>
+        <div class="text-2">
+          <p>
+            I am a front-end engineer based in Pécs, Hungary. I am passionate
+            about science and arts.
+          </p>
+        </div>
+        <div class="contact">
+          <a href="#about">
+            <p>Get to know me</p>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="about" id="about">
+      <div id="modelContainer"></div>
+
+      <div class="hi-message">
+        <h1 class="large-text">Hello, I'am Viktor</h1>
+        <p>Viktor Major</p>
+        <hr />
+      </div>
+      <div class="text">
+        <h2>Experience</h2>
+        <p>
+          Transitioning from psychology, I leverage my strong communication and
+          teamwork abilities in the tech world. I'm fascinated by algorithms and
+          the thrill of dissecting complex problems into manageable tasks. As an
+          aspiring front-end developer, I'm passionate about creating
+          user-centric applications that are both intuitive and visually
+          engaging.
+        </p>
+        <h2>Interests</h2>
+        <p>
+          Being a tech enthusiast, I'm always on the lookout for the latest
+          trends in front-end development. I appreciate aesthetics and enjoy
+          applying creative solutions to challenges. My dedication to continual
+          learning, coupled with an innate curiosity, makes me an adaptable
+          member for any innovative, tech-driven team. Looking forward to making
+          meaningful contributions to exciting projects.
+        </p>
+      </div>
+      <div>
+        <div>
+          <div class="details">
+            <h1>My Programming Skills</h1>
+            <hr />
+            <div class="skillset">
+              <span>Languages:</span> HTML, CSS, JavaScript
+            </div>
+            <div class="skillset">
+              <span>Frameworks:</span> React, Bootstrap
+            </div>
+            <div class="skillset">
+              <span>Technologies:</span> GitHub, Webpack, Npm
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="projects" id="projects">
+      <h1>Works</h1>
+    
+      <div class="project-card">
+        <div class="project-image">
+          <img src="project1.jpg" alt="Project 1">
+        </div>
+        <div class="project-description">
+          <h2>Project 1</h2>
+          <p>This is a description of Project 1...</p>
+        </div>
+        <div class="project-links">
+          <a href="demo1.html" target="_blank">Demo</a>
+          <a href="code1.html" target="_blank">Code</a>
+        </div>
+      </div>
+    
+      <div class="project-card">
+        <div class="project-image">
+          <img src="project2.jpg" alt="Project 2">
+        </div>
+        <div class="project-description">
+          <h2>Project 2</h2>
+          <p>This is a description of Project 2...</p>
+        </div>
+        <div class="project-links">
+          <a href="demo2.html" target="_blank">Demo</a>
+          <a href="code2.html" target="_blank">Code</a>
+        </div>
+      </div>
+      <!-- Repeat for more projects -->
+    </div>
+    
+    
+    <div class="contact-page" id="contact-page">
+      <h1>Contact Me</h1>
+      <p>
+        I'd love to hear from you! Whether you have a project in mind or just
+        want to say hello, feel free to drop me a message.
+      </p>
+      <form id="contact-form" onsubmit="return sendEmail(event);">
+        <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="user_name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="user_email" required>
+        </div>
+        <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Send Message">
+        </div>
+      </form>
+
+      <div class="social-links">
+        <p>You can also find me on:</p>
+        <a href="https://www.linkedin.com/in/viktor-major-559b2a250/" target="_blank"
+          >LinkedIn</a
+        >,
+        <a href="https://github.com/viktormajor" target="_blank">GitHub</a>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"
+    ></script>
+    <script src="emailJS.js"> </script>
+  </body>
+</html>
