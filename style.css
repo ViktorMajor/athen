@@ -16,47 +16,46 @@ hr {
 h1 {
   margin: 15px;
 }
+
 body {
-  cursor: none;
   font-family: Tektur;
   color: aliceblue;
   font-size: 20px;
   background-color: #2d4356;
   margin: 0;
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
+  cursor: none;
+  width: 100vw;
 }
-
-#cursor {
-  width: 25px;
-  height: 25px;
-  border: 4px solid black;
-  border-radius: 50%;
+.bubble-cursor {
   position: absolute;
+  top: 0;
+  left: 0;
   pointer-events: none;
-  transition: all 0.2s ease;
-  transition-property: background, transform;
-  transform: scale(1);
-  z-index: 999999;
-  box-sizing: border-box;
-}
-
-#cursor::after {
-  content: "";
-  display: block;
-  width: 12px;
-  height: 12px;
-  background: #435b66;
-  border-radius: 50%;
-  position: relative;
-  top: 50%;
-  left: 50%;
   transform: translate(-50%, -50%);
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background: rgba(217, 112, 7, 0.7);
+  mix-blend-mode: difference;
+  z-index: 9999;
 }
 
-#cursor.expand {
-  transform: scale(2);
-  opacity: 0;
+@keyframes ripple {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  35%,
+  85% {
+    transform: translate(-50%, -50%) scale(2.5);
+  }
+  60% {
+    transform: translate(-50%, -50%) scale(2);
+  }
+}
+
+.bubble-cursor.ripple {
+  animation: ripple 0.8s ease-in-out;
 }
 
 .welcome {
@@ -67,8 +66,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(7, 25, 82, 0.401)),
-    url("athen.webp");
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(7, 25, 82, 0.3)),
+    url("athen.png");
   background-size: cover;
   width: 100vw;
   padding: 4vw;
@@ -116,8 +115,7 @@ header {
   left: 0;
   height: 27px;
   width: 100%;
-  background: linear-gradient(to right, #ffffff, #fca34a); /* Gradiens háttér */
-  transform: scaleX(2px);
+  background: linear-gradient(to right, #ffffff, #d97107);
   transform-origin: left;
   transition: transform 0.3s ease-in-out;
 }
@@ -129,9 +127,12 @@ header div {
 
 header h1,
 header p {
-  margin: 0 15px;
+  margin: 0 5px;
   font-size: 20px;
   text-shadow: 0 0 4px #000000;
+}
+header h1 {
+  font-size: 30px;
 }
 
 header a {
@@ -149,7 +150,7 @@ header a {
   position: relative;
   opacity: 0;
   transform: rotateY(-90deg);
-  animation: slideLeft 2s cubic-bezier(0.23, 1, 0.32, 1) forwards 1.5s;
+  animation: slideLeft 2s cubic-bezier(0.23, 1, 0.32, 1) forwards 2s;
 }
 .text-1 p {
   margin: 0;
@@ -184,7 +185,7 @@ header a {
   margin-left: auto;
   position: relative;
   right: -100%;
-  animation: slideFromRight 1s forwards 2.5s;
+  animation: slideFromRight 1s forwards 3s;
 }
 
 @keyframes slideFromRight {
@@ -211,7 +212,7 @@ header a {
 }
 
 .contact:hover {
-  background-color: #fca34a;;
+  background-color: #d97107;
 }
 
 .contact p {
@@ -219,13 +220,19 @@ header a {
 }
 
 .about {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   width: 100vw;
   margin: 10px 0;
-  padding: 20px;
+  padding: 15px;
 }
-
 .about .text {
-  width: 50%;
+  width: 60%;
+}
+.about .right {
+  width: 60%;
+  align-self: flex-end;
 }
 
 .hi-message p {
@@ -249,30 +256,38 @@ header a {
 }
 .text p {
   line-height: 2;
+  margin: 5px 0;
 }
+
 .details {
-  text-align: right;
+  margin-bottom: 30px; /* Space below each section */
 }
-.skillset {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+
+.details h2 {
+  margin-bottom: 10px; /* Space below the title */
 }
-.skillset span {
-  font-weight: 700;
+
+.details ul {
+  list-style-type: none; /* Remove bullet points */
+  padding: 0; /* Remove padding */
+}
+
+.details li {
+  line-height: 1.6; /* More space between lines */
 }
 
 #projects div {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 0 15px;
+  padding: 5px 5px;
 }
 
 .project-card {
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-  margin: 20px 10px;
+  margin: 20px 15px;
   width: calc(33.333% - 20px);
   display: flex;
   flex-direction: column;
@@ -285,7 +300,7 @@ header a {
 }
 
 .project-image {
-  width: 90%;
+  width: 100%;
   height: 200px;
   overflow: hidden;
   border-radius: 10px 10px 0 0;
@@ -295,11 +310,17 @@ header a {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 10px;
 }
 
 .project-description {
   padding: 15px 10px;
   text-align: center;
+}
+.project-description p,
+.project-description h2 {
+  color: #2d4356;
+  margin: 5px;
 }
 
 .project-links {
@@ -314,7 +335,8 @@ header a {
 }
 
 .project-links a:hover {
-  color: #007bff;
+  color: #d97107;
+  font-weight: 700;
 }
 
 .contact-page {
@@ -348,17 +370,18 @@ header a {
 }
 
 .form-group input[type="submit"] {
-  background-color: #F3AA60;
+  background-color: #d97107;
   color: white;
   padding: 15px 20px;
   border: none;
   border-radius: 5px;
-  cursor: pointer;
+
   text-align: center;
   font-size: 20px;
 }
 
-.form-group input[type="submit"]:hover, .resume:hover {
+.form-group input[type="submit"]:hover,
+.resume:hover {
   background-color: #fca34a;
 }
 
@@ -368,17 +391,20 @@ header a {
 }
 
 .social-links a {
-  color: #3b5998;
+  color: #d97107;
   margin: 0 10px;
   text-decoration: none;
 }
 
 .social-links a:hover {
-  color: #8b9dc3;
+  color: white;
+}
+.social-links p {
+  text-align: center;
 }
 
 .resume {
-  background-color: #F3AA60;
+  background-color: #d97107;
   color: white;
   padding: 15px 20px;
   border: none;
@@ -407,16 +433,24 @@ header a {
   .hi-message .large-text {
     font-size: 30px;
   }
+  #projects div {
+    flex-direction: column;
+  }
+  .project-card {
+    width: auto;
+  }
+  .contact-page {
+    width: auto;
+    margin: 50px 15px;
+  }
 }
-
-
 
 @media screen and (max-width: 480px) {
   #cursor {
     display: none;
   }
   #scroll-border {
-    height: 20px;
+    height: 16px;
   }
   .large-text {
     font-size: 60px;
@@ -426,7 +460,7 @@ header a {
 
   header h1,
   header p {
-    margin: 0 15px;
+    margin: 0;
     font-size: 12px;
   }
   .right-box h1 {
@@ -447,5 +481,15 @@ header a {
 
   .hi-message .large-text {
     font-size: 25px;
+  }
+  #projects div {
+    flex-direction: column;
+  }
+  .project-card {
+    width: auto;
+  }
+  .contact-page {
+    width: auto;
+    margin: 50px 15px;
   }
 }

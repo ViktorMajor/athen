@@ -1,19 +1,19 @@
-const cursor = document.getElementById("cursor");
+const cursor = document.querySelector('.bubble-cursor');
 
-document.addEventListener("mousemove", (e) => {
-  cursor.setAttribute(
-    "style",
-    "top: " + (e.pageY - 10) + "px; left: " + (e.pageX - 10) + "px;"
-  );
-});
+document.addEventListener('mousemove', e => {
+  cursor.setAttribute("style", "top: " + e.pageY + "px; left: " + e.pageX + "px;")
+})
 
-document.addEventListener("click", () => {
-  cursor.classList.add("expand");
+document.addEventListener('click', () => {
+  cursor.classList.add("ripple");
 
   setTimeout(() => {
-    cursor.classList.remove("expand");
-  }, 90);
-});
+    cursor.classList.remove("ripple");
+  }, 800); // match the duration of the CSS animation
+})
+
+
+
 window.addEventListener("scroll", function () {
     // A dokumentum teljes magassága
     let docHeight = Math.max(
