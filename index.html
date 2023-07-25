@@ -9,20 +9,16 @@
       name="keywords"
       content="Frontend Engineer, Web Developer, HTML, CSS, JavaScript, React, Bootstrap, Viktor Major, Portfolio"
     />
-
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Viktor Major - Frontend Developer Portfolio</title>
     <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
+    <script src="https://code.iconify.design/1/1.0.4/iconify.min.js">   </script>
   </head>
   <body>
     <div class="bubble-cursor" id="cursor"></div>
-    <header>
+    <header id="header">
       <div class="left-box">
         <a id="welcome-a" href="#welcome">
           <p>welcome</p>
@@ -39,6 +35,18 @@
       </div>
       <div class="right-box">
         <h1>VIKTOR MAJOR</h1>
+        <label>
+          <input class='toggle-checkbox' type='checkbox'></input>
+          <div class='toggle-slot'>
+            <div class='sun-icon-wrapper'>
+              <div class="iconify sun-icon" data-icon="feather-sun" data-inline="false"></div>
+            </div>
+            <div class='toggle-button'></div>
+            <div class='moon-icon-wrapper'>
+              <div class="iconify moon-icon" data-icon="feather-moon" data-inline="false"></div>
+            </div>
+          </div>
+        </label>
       </div>
       <div id="scroll-border"></div>
     </header>
@@ -63,13 +71,12 @@
         </div>
       </div>
     </div>
-
+    <div id="miro" class="miro">
     <div class="about" id="about">
-      <div class="hi-message">
-        <hr />
-      </div>
+      <div class="hi-message"></div>
       <div class="text">
-        <h1 class="reveal animate__animated animate__fadeInLeft">About Me</h1>
+        <h1>About Me</h1>
+        <hr />
         <p>
           I have actively engaged in various personal and academic projects to
           develop my front-end development skills, gaining hands-on experience
@@ -90,9 +97,9 @@
         </p>
         <p>
           I have honed my front-end web development skills through The Odin
-          Project and CodeBerry School, where I gained proficiency in React.
-          Furthermore, I expanded my programming and algorithmic knowledge by
-          completing Harvard's CS50 course.
+          Project and CodeBerry School, where I gained proficiency in
+          JavaScript. Furthermore, I expanded my programming and algorithmic
+          knowledge by completing Harvard's CS50 course.
         </p>
         <p>
           As a technology enthusiast, I remain vigilant for emerging trends in
@@ -173,95 +180,92 @@
       </div>
     </div>
 
-    <div class="projects" id="projects">
-      <h1>Works</h1>
-
-      <div>
-        <div class="project-card">
-          <div class="project-image">
-            <img src="career.guidance.png" alt="Career Guidance" />
+    
+      <div class="projects" id="projects">
+        <h1>Works</h1>
+        <div>
+          <div class="project-card">
+            <div class="project-image">
+              <img src="career.guidance.png" alt="Career Guidance" />
+            </div>
+            <div class="project-description">
+              <h2>Career Guidance</h2>
+              <p>
+                This project is a career guidance website that I developed using
+                HTML, CSS, and JavaScript. It helps users find suitable career
+                paths based on their skills and interests. This project involved
+                creating a user-friendly interface and implementing a matching
+                algorithm.
+              </p>
+            </div>
+            <div class="project-links">
+              <a
+                href="https://career-test-fujtrwpb3-viktormajor.vercel.app/"
+                target="_blank"
+                >Demo</a
+              >
+              <a href="https://github.com/viktormajor/career-test" target="_blank"
+                >Code</a
+              >
+            </div>
           </div>
-          <div class="project-description">
-            <h2>Career Guidance</h2>
-            <p>
-              This project is a career guidance website that I developed using
-              HTML, CSS, and JavaScript. It helps users find suitable career
-              paths based on their skills and interests. This project involved
-              creating a user-friendly interface and implementing a matching
-              algorithm.
-            </p>
-          </div>
-          <div class="project-links">
-            <a
-              href="https://career-test-fujtrwpb3-viktormajor.vercel.app/"
-              target="_blank"
-              >Demo</a
-            >
-            <a href="https://github.com/viktormajor/career-test" target="_blank"
-              >Code</a
-            >
-          </div>
-        </div>
-        <div class="project-card">
-          <div class="project-image">
-            <img src="gameoflife.png" alt="Game of Life" />
-          </div>
-          <div class="project-description">
-            <h2>Game of Life</h2>
-            <p>
-              The Game of Life is a zero-player cellular automaton game devised
-              by John Horton Conway. I developed my version using JavaScript for
-              efficient cell state management, HTML and CSS for the user
-              interface. It showcases my ability to write algorithms and build
-              interactive web interfaces.
-            </p>
-          </div>
-          <div class="project-links">
-            <a href="https://viktormajor.github.io/GameOfLife/" target="_blank"
-              >Demo</a
-            >
-            <a href="https://github.com/ViktorMajor/GameOfLife" target="_blank"
-              >Code</a
-            >
+          <div class="project-card">
+            <div class="project-image">
+              <img src="gameoflife.png" alt="Game of Life" />
+            </div>
+            <div class="project-description">
+              <h2>Game of Life</h2>
+              <p>
+                The Game of Life is a zero-player cellular automaton game devised
+                by John Horton Conway. I developed my version using JavaScript for
+                efficient cell state management, HTML and CSS for the user
+                interface. It showcases my ability to write algorithms and build
+                interactive web interfaces.
+              </p>
+            </div>
+            <div class="project-links">
+              <a href="https://viktormajor.github.io/GameOfLife/" target="_blank"
+                >Demo</a
+              >
+              <a href="https://github.com/ViktorMajor/GameOfLife" target="_blank"
+                >Code</a
+              >
+            </div>
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="contact-page" id="contact-page">
-      <h1>Contact Me</h1>
-      <p>If you want to contact me, feel free to drop me a message.</p>
-      <form id="contact-form" onsubmit="return sendEmail(event);">
-        <div class="form-group">
-          <label for="name">Your Name</label>
-          <input type="text" id="name" name="user_name" required />
+      <div class="contact-page" id="contact-page">
+        <h1>Contact Me</h1>
+        <hr />
+        <p>If you want to contact me, feel free to drop me a message.</p>
+        <form id="contact-form" onsubmit="return sendEmail(event);">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="user_name" required />
+          </div>
+         
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+          </div>
+          <div class="form-group">
+            <input type="submit" value="Send Message" />
+          </div>
+        </form>
+        <div class="social-links">
+          <p>You can also find me on:</p>
+          <div>
+            <button onclick="download()" class="resume">
+              Curriculum Vitae
+            </button>
+          </div>
+          <a
+            href="https://www.linkedin.com/in/viktor-major-559b2a250/"
+            target="_blank"
+            >LinkedIn</a
+          >,
+          <a href="https://github.com/viktormajor" target="_blank">GitHub</a>
         </div>
-        <div class="form-group">
-          <label for="email">Your Email</label>
-          <input type="email" id="email" name="user_email" required />
-        </div>
-        <div class="form-group">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="6" required></textarea>
-        </div>
-        <div class="form-group">
-          <input type="submit" value="Send Message" />
-        </div>
-      </form>
-
-      <div class="social-links">
-        <p>You can also find me on:</p>
-        <div>
-          <button onclick="download()" class="resume">
-            Download my resume
-          </button>
-        </div>
-        <a
-          href="https://www.linkedin.com/in/viktor-major-559b2a250/"
-          target="_blank"
-          >LinkedIn</a
-        >,
-        <a href="https://github.com/viktormajor" target="_blank">GitHub</a>
       </div>
     </div>
 
