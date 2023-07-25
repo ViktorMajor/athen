@@ -14,10 +14,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Viktor Major - Frontend Developer Portfolio</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="https://code.iconify.design/1/1.0.4/iconify.min.js">   </script>
+    <script src="https://code.iconify.design/1/1.0.4/iconify.min.js"></script>
   </head>
   <body>
-    <div class="bubble-cursor" id="cursor"></div>
     <header id="header">
       <div class="left-box">
         <a id="welcome-a" href="#welcome">
@@ -36,14 +35,17 @@
       <div class="right-box">
         <h1>VIKTOR MAJOR</h1>
         <label>
-          <input class='toggle-checkbox' type='checkbox'></input>
-          <div class='toggle-slot'>
-            <div class='sun-icon-wrapper'>
-              <div class="iconify sun-icon" data-icon="feather-sun" data-inline="false"></div>
-            </div>
-            <div class='toggle-button'></div>
-            <div class='moon-icon-wrapper'>
-              <div class="iconify moon-icon" data-icon="feather-moon" data-inline="false"></div>
+          <div>
+            <input class='toggle-checkbox' type='checkbox'>
+          </input>
+            <div class='toggle-slot'>
+              <div class='sun-icon-wrapper'>
+                <div class="iconify sun-icon" data-icon="feather-sun" data-inline="false"></div>
+              </div>
+              <div class='toggle-button'></div>
+              <div class='moon-icon-wrapper'>
+                <div class="iconify moon-icon" data-icon="feather-moon" data-inline="false"></div>
+              </div>
             </div>
           </div>
         </label>
@@ -72,115 +74,132 @@
       </div>
     </div>
     <div id="miro" class="miro">
-    <div class="about" id="about">
-      <div class="hi-message"></div>
-      <div class="text">
-        <h1>About Me</h1>
-        <hr />
-        <p>
-          I have actively engaged in various personal and academic projects to
-          develop my front-end development skills, gaining hands-on experience
-          with technologies such as HTML, CSS, JavaScript, React, and Bootstrap.
-          Each day, I am driven to refine my expertise in these areas through
-          continuous improvement.
-        </p>
-        <p>
-          Additionally, I have completed several online courses and bootcamps,
-          which have significantly deepened my knowledge of web development.
-        </p>
-        <p>
-          My professional background in psychology has equipped me with strong
-          communication and teamwork skills, which I now leverage in the tech
-          industry. As a passionate front-end developer, my focus lies in
-          crafting user-centered applications that seamlessly blend
-          functionality with visual appeal.
-        </p>
-        <p>
-          I have honed my front-end web development skills through The Odin
-          Project and CodeBerry School, where I gained proficiency in
-          JavaScript. Furthermore, I expanded my programming and algorithmic
-          knowledge by completing Harvard's CS50 course.
-        </p>
-        <p>
-          As a technology enthusiast, I remain vigilant for emerging trends in
-          front-end development. I have a keen eye for aesthetics and enjoy
-          applying innovative solutions to overcome challenges and enhance my
-          skillset. My dedication to continuous learning, coupled with an innate
-          curiosity, enables me to adapt seamlessly to any cutting-edge,
-          tech-driven team. I am eager to contribute meaningfully to exciting
-          projects.
-        </p>
-      </div>
-
-      <div class="text right">
-        <div>
-          <div class="details">
-            <h1>My Programming Skills</h1>
-            <hr />
-            <div class="skillset">
-              <h2>Languages:</h2>
-              <div>
-                <p>
-                  <strong>HTML -</strong>
-                  Strong understanding and experience in using semantic HTML
-                  elements. Knowledge acquired through CodeBerry School and The
-                  Odin Project.
-                </p>
-                <p>
-                  <strong>CSS -</strong>
-                  Proficient in creating complex layouts and adaptive designs.
-                  Trained at CodeBerry School and The Odin Project.
-                </p>
-                <p>
-                  <strong>JavaScript -</strong>
-                  Solid grasp of fundamental JavaScript concepts, building
-                  dynamic web applications. Skills honed through The Odin
-                  Project and Harvard's CS50 course.
-                </p>
-              </div>
+      <div class="about" id="about">
+        
+       
+        
+     
+        <div class="text">
+          <h1>About Me</h1>
+          <hr />
+          <p>
+            I have actively engaged in various personal projects to
+            develop my front-end development skills, gaining hands-on experience
+            with technologies such as HTML, CSS, JavaScript, React, and
+            Bootstrap. Each day, I am driven to refine my expertise in these
+            areas through continuous improvement.
+          </p>
+          <p>
+            Additionally, I have completed several online courses and bootcamps,
+            which have significantly deepened my knowledge of web development.
+          </p>
+          <p>
+            My professional background in psychology has equipped me with strong
+            communication and teamwork skills, which I now leverage in the tech
+            industry. As a passionate front-end developer, my focus lies in
+            crafting user-centered applications that seamlessly blend
+            functionality with visual appeal.
+          </p>
+          <p>
+            I have honed my front-end web development skills through The Odin
+            Project and CodeBerry School, where I gained proficiency in
+            JavaScript. Furthermore, I expanded my programming and algorithmic
+            knowledge by completing Harvard's CS50 course.
+          </p>
+          <p>
+            As a technology enthusiast, I remain vigilant for emerging trends in
+            front-end development. I have a keen eye for aesthetics and enjoy
+            applying innovative solutions to overcome challenges and enhance my
+            skillset. My dedication to continuous learning, coupled with an
+            innate curiosity, enables me to adapt seamlessly to any
+            cutting-edge, tech-driven team. I am eager to contribute
+            meaningfully to exciting projects.
+          </p>
+        </div>
+          <div id="chat-container">
+            <h1>About Me Chatbot</h1>
+            <p>If you don't feel like reading so much.</p>
+          
+            <div id="options-container">
+              <button class="messageButton" onclick="sendMessage('Hello')">Hello!</button>
+              <button class="messageButton" onclick="sendMessage('What are your previous experiences?')">Previous experience</button>
+              <button class="messageButton" onclick="sendMessage('What courses have you been trained in?')">Courses</button>
+              <button class="messageButton" onclick="sendMessage('What programming skills do you have?')">Programming skills</button>
+              <button class="messageButton" onclick="sendMessage('What other skills do you have?')">Additional skills</button>
+              <button class="messageButton" onclick="sendMessage('What are your goals for the future?')">Future goals</button>
             </div>
-            <div class="skillset">
-              <h2>Frameworks:</h2>
-              <div>
-                <p>
-                  <strong>React -</strong>
-                  Experience in developing single-page applications using React.
-                  Understanding of advanced concepts. Learned through The Odin
-                  Project and self-study.
-                </p>
-                <p>
-                  <strong>Bootstrap -</strong>
-                  Experience with responsive design and rapid prototyping.
-                  Training from self-study.
-                </p>
+      
+          </div>
+        
+       
+        <div class="text right">
+          <div>
+            <div class="details">
+              <h1>My Programming Skills</h1>
+              <hr />
+              <div class="skillset">
+                <h2>Languages:</h2>
+                <div>
+                  <p>
+                    <strong>HTML -</strong>
+                    Strong understanding and experience in using semantic HTML
+                    elements. Knowledge acquired through CodeBerry School and
+                    The Odin Project.
+                  </p>
+                  <p>
+                    <strong>CSS -</strong>
+                    Proficient in creating complex layouts and adaptive designs.
+                    Trained at CodeBerry School and The Odin Project.
+                  </p>
+                  <p>
+                    <strong>JavaScript -</strong>
+                    Solid grasp of fundamental JavaScript concepts, building
+                    dynamic web applications. Skills honed through The Odin
+                    Project and Harvard's CS50 course.
+                  </p>
+                </div>
               </div>
-            </div>
-            <div class="skillset">
-              <h2>Technologies:</h2>
-              <div>
-                <p>
-                  <strong>GitHub -</strong>
-                  Proficiency in version control systems, collaborative
-                  development practices. Learned through The Odin Project.
-                </p>
-                <p>
-                  <strong>Webpack -</strong>
-                  Experience in module bundling, asset management, and
-                  optimization. Acquired skills through self-study.
-                </p>
-                <p>
-                  <strong>Npm -</strong>
-                  Understanding of package management and script running.
-                  Knowledge gained from self-study.
-                </p>
+              <div class="skillset">
+                <h2>Frameworks:</h2>
+                <div>
+                  <p>
+                    <strong>React -</strong>
+                    Experience in developing single-page applications using
+                    React. Understanding of advanced concepts. Learned through
+                    The Odin Project and self-study.
+                  </p>
+                  <p>
+                    <strong>Bootstrap -</strong>
+                    Experience with responsive design and rapid prototyping.
+                    Training from self-study.
+                  </p>
+                </div>
+              </div>
+              <div class="skillset">
+                <h2>Technologies:</h2>
+                <div>
+                  <p>
+                    <strong>GitHub -</strong>
+                    Proficiency in version control systems, collaborative
+                    development practices. Learned through The Odin Project.
+                  </p>
+                  <p>
+                    <strong>Webpack -</strong>
+                    Experience in module bundling, asset management, and
+                    optimization. Acquired skills through self-study.
+                  </p>
+                  <p>
+                    <strong>Npm -</strong>
+                    Understanding of package management and script running.
+                    Knowledge gained from self-study.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    
       <div class="projects" id="projects">
         <h1>Works</h1>
         <div>
@@ -204,7 +223,9 @@
                 target="_blank"
                 >Demo</a
               >
-              <a href="https://github.com/viktormajor/career-test" target="_blank"
+              <a
+                href="https://github.com/viktormajor/career-test"
+                target="_blank"
                 >Code</a
               >
             </div>
@@ -216,18 +237,22 @@
             <div class="project-description">
               <h2>Game of Life</h2>
               <p>
-                The Game of Life is a zero-player cellular automaton game devised
-                by John Horton Conway. I developed my version using JavaScript for
-                efficient cell state management, HTML and CSS for the user
-                interface. It showcases my ability to write algorithms and build
-                interactive web interfaces.
+                The Game of Life is a zero-player cellular automaton game
+                devised by John Horton Conway. I developed my version using
+                JavaScript for efficient cell state management, HTML and CSS for
+                the user interface. It showcases my ability to write algorithms
+                and build interactive web interfaces.
               </p>
             </div>
             <div class="project-links">
-              <a href="https://viktormajor.github.io/GameOfLife/" target="_blank"
+              <a
+                href="https://viktormajor.github.io/GameOfLife/"
+                target="_blank"
                 >Demo</a
               >
-              <a href="https://github.com/ViktorMajor/GameOfLife" target="_blank"
+              <a
+                href="https://github.com/ViktorMajor/GameOfLife"
+                target="_blank"
                 >Code</a
               >
             </div>
@@ -243,7 +268,7 @@
             <label for="name">Your Name</label>
             <input type="text" id="name" name="user_name" required />
           </div>
-         
+
           <div class="form-group">
             <label for="message">Message</label>
             <textarea id="message" name="message" rows="6" required></textarea>
@@ -254,21 +279,19 @@
         </form>
         <div class="social-links">
           <p>You can also find me on:</p>
-          <div>
-            <button onclick="download()" class="resume">
-              Curriculum Vitae
-            </button>
-          </div>
+          <a href="resume.pdf" target="_blank">Curriculum Vitae</a>
           <a
             href="https://www.linkedin.com/in/viktor-major-559b2a250/"
             target="_blank"
             >LinkedIn</a
-          >,
+          >
           <a href="https://github.com/viktormajor" target="_blank">GitHub</a>
         </div>
       </div>
     </div>
-
+    <div class="cursor"></div>
+    <div class="cursor2"></div>
     <script src="script.js"></script>
+    <script src="chatbot.js"></script>
   </body>
 </html>

@@ -1,8 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Tektur:wght@400;700&display=swap");
 
-html {
-  cursor: none;
-}
+
 
 * {
   box-sizing: border-box;
@@ -15,10 +13,84 @@ a {
   text-decoration: none;
 }
 hr {
-  border: 1px solid #435b66;
+  border: 1px solid #d97107;
+  width: 100%;
+  margin: 0;
 }
 h1 {
-  margin: 15px;
+  margin: 0px;
+  font-size: 40px;
+}
+
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+
+a {
+  position: relative;
+  text-decoration: none;
+}
+
+a:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  display: block;
+  margin-top: 0px;
+  left: 0%;
+  background: black;
+  transition: width .3s ease;
+}
+
+a:hover:after{
+  width: 100%;
+  left: 0%;
+  background: black;
+}
+
+.cursor {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  border: 1.5px solid #d97107;
+  transition: all 200ms ease-out;
+  position: fixed;
+  pointer-events: none;
+  left: 0;
+  top: 0;
+  z-index: 9999;
+  transform: translate(calc(-50% + 15px), -50%);
+}
+
+.cursor2 {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #2d4356;
+
+  border-radius: 100%;
+  background-color: #d97107;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: width .5s, height .5s, opacity .5s;
+  z-index: 9999;
+}
+
+.hover {
+  opacity: 0.5;
+}
+
+.cursorinnerhover {
+  width: 50px;
+  height: 50px;
+  opacity: .5;
 }
 
 body {
@@ -27,47 +99,48 @@ body {
   font-size: 20px;
   background-color: aliceblue;
   margin: 0;
-  
   width: 100vw;
+  cursor: none;
 }
 
-.bubble-cursor {
-  position: absolute;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  background: rgba(217, 112, 7, 0.7);
-  mix-blend-mode: difference;
-  z-index: 9999;
+
+
+#chat-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  width: 40%;
+  padding-left: 15px;
 }
 
-@keyframes ripple {
-  0%,
-  100% {
-    transform: translate(-50%, -50%) scale(1);
-  }
-  35%,
-  85% {
-    transform: translate(-50%, -50%) scale(2.5);
-  }
-  60% {
-    transform: translate(-50%, -50%) scale(2);
-  }
+.chat-entry {
+  display: flex;
+  margin: 10px;
 }
 
-.bubble-cursor.ripple {
-  animation: ripple 0.8s ease-in-out;
+.sender {
+  font-weight: bold;
+  margin-right: 5px;
 }
+
+#options-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 15px 0;
+}
+
+button {
+  background: #00000000;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+
 
 .welcome {
   height: 100vh;
   overflow: hidden;
   position: relative;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -106,7 +179,7 @@ header {
   width: 100vw;
   position:sticky;
 top: 0;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(1px);
   display: flex;
   flex-direction: column-reverse;
@@ -191,8 +264,7 @@ top: 0;
   height: 2em;
   width: 6em;
   opacity: 0;
-  /* transform: translate(11em, 2em) rotate(0deg); */
-  /* transform-origin: 50% 50%; */
+
   transition: opacity 150ms, transform 500ms cubic-bezier(.26,2.5,.46,.71);
 }
 
@@ -211,7 +283,7 @@ top: 0;
   width: 100%;
   background: linear-gradient(to right, #ffffff, #d97107);
   transform-origin: left;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s linear;
 }
 
 header div {
@@ -328,15 +400,19 @@ input:checked + .slider:before {
   font-size: 105px;
   font-weight: 700;
   letter-spacing: -3px;
-  text-shadow: 0 0 1px #000000;
+  text-shadow: 0 2px 2px #2d4356;
 }
 
 .text-2 {
-  width: 60%;
+  width: 50%;
   margin-left: auto;
   position: relative;
   right: -100%;
   animation: slideFromRight 1s forwards 3s;
+}
+.text-2 p{
+  text-shadow: 0 2px 2px #2d4356;
+
 }
 
 @keyframes slideFromRight {
@@ -351,15 +427,12 @@ input:checked + .slider:before {
   text-shadow: 0 0 1px #000000;
 }
 
-.contact {
-  position: relative;
-  opacity: 0;
-  transform: rotateY(-90deg);
-  animation: slideLeft 2s cubic-bezier(0.23, 1, 0.32, 1) forwards 2s;
+.contact, button {
   display: inline-block;
-  padding: 5px;
-  border: 3px solid white;
+  padding: 10px;
+  border: 3px solid #d97107;
   border-radius: 25px;
+  margin: 5px;
 }
 
 .contact:hover {
@@ -372,41 +445,30 @@ input:checked + .slider:before {
 #miro {
   color: #2d4356;
 }
-.about {
+.question{
+  display: none;
+}
+#about {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
   width: 100vw;
   margin: -15px 0;
   padding: 15px;
+  flex-wrap: wrap;
 }
-.about .text {
+.text {
   width: 60%;
+  padding: 0 15px;
 }
 .about .right {
   width: 60%;
   align-self: flex-end;
 }
 
-.hi-message p {
-  text-align: end;
-  margin-top: 5px;
-  font-size: 20px;
-  line-height: 1.6;
-  color: #ffffff;
-}
 
-.hi-message {
-  text-align: right;
-  margin: 20px 0;
-}
 
-.hi-message .large-text {
-  font-size: 40px;
 
-  color: #ffffff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
 .text p {
   line-height: 2;
   margin: 5px 0;
@@ -496,6 +558,7 @@ input:checked + .slider:before {
   width: 80%;
   margin: auto;
   padding: 50px 0;
+  color: #2d4356;
 }
 .contact-form {
   display: flex;
@@ -557,17 +620,7 @@ input:checked + .slider:before {
   text-align: center;
 }
 
-.resume {
-  background-color: #d97107;
-  color: white;
-  padding: 15px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  text-align: center;
-  font-size: 20px;
-  margin: 5px;
-}
+
 
 @media screen and (max-width: 768px) {
   .large-text {
@@ -584,9 +637,7 @@ input:checked + .slider:before {
     width: 100%;
   }
 
-  .hi-message .large-text {
-    font-size: 30px;
-  }
+ 
   #projects div {
     flex-direction: column;
   }
@@ -597,6 +648,9 @@ input:checked + .slider:before {
     width: auto;
     margin: 50px 15px;
   }
+  #chat-container {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -604,20 +658,20 @@ input:checked + .slider:before {
     display: none;
   }
   #scroll-border {
-    height: 16px;
+    height: 26px;
   }
   header {
     top: -59px;
   }
   .large-text {
     font-size: 60px;
-    font-weight: normal;
+    font-weight: 700;
     letter-spacing: inherit;
   }
 
   header h1,
   header p {
-    margin: 0;
+    margin: 5px;
     font-size: 11px;
   }
   .right-box h1 {
@@ -636,9 +690,10 @@ input:checked + .slider:before {
     width: 100%;
   }
 
-  .hi-message .large-text {
-    font-size: 25px;
+  #chat-container {
+    width: 100%;
   }
+
   #projects div {
     flex-direction: column;
   }

@@ -1,18 +1,37 @@
-const cursor = document.querySelector(".bubble-cursor");
+var cursor = document.querySelector(".cursor");
+var cursorinner = document.querySelector(".cursor2");
+var a = document.querySelectorAll("a");
 
-document.addEventListener("mousemove", (e) => {
-  cursor.setAttribute(
-    "style",
-    "top: " + e.pageY + "px; left: " + e.pageX + "px;"
-  );
+document.addEventListener("mousemove", function (e) {
+  var x = e.clientX;
+  var y = e.clientY;
+  cursor.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`;
 });
 
-document.addEventListener("click", () => {
-  cursor.classList.add("ripple");
+document.addEventListener("mousemove", function (e) {
+  var x = e.clientX;
+  var y = e.clientY;
+  cursorinner.style.left = x + "px";
+  cursorinner.style.top = y + "px";
+});
 
-  setTimeout(() => {
-    cursor.classList.remove("ripple");
-  }, 800); // match the duration of the CSS animation
+document.addEventListener("mousedown", function () {
+  cursor.classList.add("click");
+  cursorinner.classList.add("cursorinnerhover");
+});
+
+document.addEventListener("mouseup", function () {
+  cursor.classList.remove("click");
+  cursorinner.classList.remove("cursorinnerhover");
+});
+
+a.forEach((item) => {
+  item.addEventListener("mouseover", () => {
+    cursor.classList.add("hover");
+  });
+  item.addEventListener("mouseleave", () => {
+    cursor.classList.remove("hover");
+  });
 });
 
 window.addEventListener("scroll", function () {
@@ -55,14 +74,10 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
   const bodyHeight = document.body.scrollHeight;
 
-  // Calculate and log the percentage for each section
   let welcomePos = (welcome.offsetTop / bodyHeight) * 100;
   let aboutPos = (about.offsetTop / bodyHeight) * 100;
   let projectsPos = (projects.offsetTop / bodyHeight) * 100;
   let contactPos = (contactPage.offsetTop / bodyHeight) * 100;
-  console.log(aboutPos);
-  console.log(projectsPos);
-  console.log(contactPos);
 
   const welcomeA = document.getElementById("welcome-a");
   const aboutA = document.getElementById("about-a");
@@ -80,39 +95,38 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     e.preventDefault();
 
     document.querySelector(this.getAttribute("href")).scrollIntoView({
-      behavior: "smooth",
+      behavior: "linear",
     });
   });
 });
 
 const toggleCheckbox = document.querySelector(".toggle-checkbox");
 const link = document.querySelector(".social-links a");
-
+const contactPage = document.querySelector(".contact-page");
+const messageButtons = document.getElementsByClassName("messageButton");
 toggleCheckbox.addEventListener("change", function () {
   // dark mode
   if (this.checked) {
     document.body.style.backgroundColor = "#2d4356";
-    miro.style.backgroundColor = "#2d4356";
+    Array.from(messageButtons).forEach((button) => {
+      button.style.color = "aliceblue";
+    });
+
     miro.style.color = "aliceblue";
+    miro.style.backgroundColor = "#2d4356";
     welcome.style.backgroundImage =
       'linear-gradient(rgba(0, 0, 0, 0.4), rgba(7, 25, 82, 0.5)), url("athen.png")';
-    link.addEventListener("mouseover", () => {
-      link.style.color = "white";
-    });
+    contactPage.style.color = "aliceblue";
   } else {
     //light mode
+    document.body.style.backgroundColor = "aliceblue";
+    Array.from(messageButtons).forEach((button) => {
+      button.style.color = "#2d4356";
+    });
     welcome.style.backgroundImage =
       'linear-gradient(rgba(0, 0, 0, 0.1), rgba(7, 25, 82, 0.2)), url("athen.png")';
-
     miro.style.backgroundColor = "aliceblue";
     miro.style.color = "#2d4356";
-    link.addEventListener("mouseout", () => {
-      link.style.color = "#d97107"; 
-    });
+    contactPage.style.color = "#2d4356";
   }
 });
-
-
-
-
-
