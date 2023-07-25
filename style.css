@@ -39,14 +39,14 @@ a {
 
 a:after {
   content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  display: block;
-  margin-top: 0px;
-  left: 0%;
-  background: black;
-  transition: width .3s ease;
+    position: absolute;
+    width: 0;
+    height: 3px;
+    display: block;
+    margin-top: 0px;
+    left: 0%;
+    background: black;
+    transition: width .5s ease;
 }
 
 a:hover:after{
@@ -96,7 +96,7 @@ a:hover:after{
 body {
   font-family: Tektur;
   color: aliceblue;
-  font-size: 20px;
+  font-size: 16px;
   background-color: aliceblue;
   margin: 0;
   width: 100vw;
@@ -317,14 +317,12 @@ header a {
   height: 34px;
 }
 
-/* Az elrejtett alapértelmezett checkbox */
 .switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
 
-/* A csúszka megjelenítése a kapcsolón */
 .slider {
   position: absolute;
   cursor: pointer;
@@ -337,7 +335,6 @@ header a {
   transition: .4s;
 }
 
-/* Az "ON" állapotban megjelenő csúszka stílusa */
 .slider:before {
   position: absolute;
   content: "";
@@ -350,12 +347,10 @@ header a {
   transition: .4s;
 }
 
-/* Az alapértelmezett checkbox "CHECKED" állapotában megjelenő csúszka stílusa */
 input:checked + .slider {
   background-color: #2196F3;
 }
 
-/* Az alapértelmezett checkbox "CHECKED" állapotában megjelenő csúszka pozíciója */
 input:checked + .slider:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
@@ -404,7 +399,7 @@ input:checked + .slider:before {
 }
 
 .text-2 {
-  width: 50%;
+  width: 70%;
   margin-left: auto;
   position: relative;
   right: -100%;
@@ -423,7 +418,7 @@ input:checked + .slider:before {
 
 .text-2 p,
 .contact {
-  font-size: 30px;
+  font-size: 25px;
   text-shadow: 0 0 1px #000000;
 }
 
@@ -444,6 +439,8 @@ input:checked + .slider:before {
 }
 #miro {
   color: #2d4356;
+  padding: 15px;
+  margin-top: 15px;
 }
 .question{
   display: none;
@@ -454,7 +451,7 @@ input:checked + .slider:before {
   align-items: flex-start;
   width: 100vw;
   margin: -15px 0;
-  padding: 15px;
+ 
   flex-wrap: wrap;
 }
 .text {
@@ -545,8 +542,8 @@ input:checked + .slider:before {
 .project-links a {
   margin: 0 10px;
   text-decoration: none;
-  color: #333;
-  transition: color 0.3s ease-in-out;
+  color: #2d4356;
+  transition: color 0.5s linear;
 }
 
 .project-links a:hover {
