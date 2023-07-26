@@ -12,6 +12,11 @@ const chatData = [
       answer: 'Having worked in the field of psychology, my front-end experience so far has only come from volunteer work and project-based development.'
   },
   {
+      question: 'How did your psychology background influence your approach to front-end development?',
+      answer: `My psychology background sets me apart in the tech world by giving me a unique perspective on user behavior and emotions. This knowledge helps me craft applications that not only function flawlessly but also appeal to users visually and emotionally, enhancing the overall user experience.
+      `
+  },
+  {
       question: 'What courses have you been trained in?',
       answer: `I trained at CodeBerry School, The Odin Project and Harvard's CS50.`
   },
@@ -32,29 +37,40 @@ const chatData = [
   }
 ];
 
-function addChatEntry(sender, message, delay = 0) {
-    setTimeout(() => {
-        const chatDiv = document.createElement('div');
-        chatDiv.className = 'chat-entry';
+function addChatEntry(sender, message, delay = 0, typingDelay = 80) {
+  setTimeout(() => {
+    const chatDiv = document.createElement('div');
+    chatDiv.className = 'chat-entry';
 
-        const senderSpan = document.createElement('span');
-        senderSpan.className = 'sender';
-        senderSpan.textContent = sender + ':';
+    const senderSpan = document.createElement('span');
+    senderSpan.className = 'sender';
 
-        const messageSpan = document.createElement('span');
-        messageSpan.className = 'message';
-        messageSpan.textContent = message;
+    const messageSpan = document.createElement('span');
+    messageSpan.className = 'message';
 
-        chatDiv.appendChild(senderSpan);
-        chatDiv.appendChild(messageSpan);
+    chatDiv.appendChild(senderSpan);
+    chatDiv.appendChild(messageSpan);
+    chatContainer.appendChild(chatDiv);
 
-        chatContainer.appendChild(chatDiv);
-
-        // Adding animation class after appending to show animation
-        setTimeout(() => {
-            chatDiv.classList.add('show');
-        }, 100);
-    }, delay);
+    if (sender === 'Bot') {
+      // For "Bot" responses, add typing animation for "Bot:" prefix and the message
+      senderSpan.textContent = 'Bot:';
+      const typingAnimation = () => {
+        if (message.length > 0) {
+          messageSpan.textContent += message.charAt(0);
+          message = message.substring(1);
+          setTimeout(typingAnimation, typingDelay);
+        } else {
+          chatDiv.classList.add('show');
+        }
+      };
+      setTimeout(typingAnimation, 50);
+    } else {
+      senderSpan.textContent = 'You:';
+      messageSpan.textContent = message;
+      chatDiv.classList.add('show');
+    }
+  }, delay);
 }
 
 function getBotResponse(userQuestion) {
