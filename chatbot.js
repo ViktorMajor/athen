@@ -1,106 +1,116 @@
-
-const chatContainer = document.getElementById('chat-container');
-const sendButton = document.getElementById('sendButton');
+const chatContainer = document.getElementById("chat-container");
+const sendButton = document.getElementById("sendButton");
 
 const chatData = [
   {
-      question: 'Hello',
-      answer: 'Hello! How can I help you?'
+    question: "Hello!",
+    answer: `Hello! Thank you for reaching out.`,
   },
   {
-      question: 'What are your previous experiences?',
-      answer: 'Having worked in the field of psychology, my front-end experience so far has only come from volunteer work and project-based development.'
+    question:
+      "Can you tell me about your previous experiences as a front-end developer?",
+    answer: `Certainly! I have been involved in front-end development through various volunteer projects and have completed training at CodeBerry School, The Odin Project, and Harvard's CS50. These experiences have provided me with a strong foundation in HTML, CSS, and JavaScript, along with expertise in using popular frameworks like React and Bootstrap.`,
   },
   {
-      question: 'How did your psychology background influence your approach to front-end development?',
-      answer: `My psychology background sets me apart in the tech world by giving me a unique perspective on user behavior and emotions. This knowledge helps me craft applications that not only function flawlessly but also appeal to users visually and emotionally, enhancing the overall user experience.
-      `
+    question:
+      "How has your background in psychology influenced your approach to front-end development?",
+    answer: `My background in psychology has been a valuable asset in my front-end development journey. Understanding user behavior and emotions allows me to create user-centric interfaces that not only function seamlessly but also resonate with users on a deeper level. By prioritizing the user experience, I aim to craft applications that are not only visually appealing but also emotionally engaging, thus leaving a lasting positive impact on users.`,
   },
   {
-      question: 'What courses have you been trained in?',
-      answer: `I trained at CodeBerry School, The Odin Project and Harvard's CS50.`
+    question:
+      "Apart from technical skills, do you possess any other relevant skills?",
+    answer:
+      "Absolutely! My psychology background has cultivated strong communication and collaboration skills, making me an effective team player. I believe in open and transparent communication within the team, which leads to better problem-solving and project outcomes. Additionally, my conflict management skills help foster a positive and productive work environment.",
+  },
+
+  {
+    question:
+      "How do you stay updated with the latest trends and advancements in front-end development?",
+    answer:
+      "Continuous learning is crucial in the fast-paced world of front-end development. I regularly follow industry blogs. I enjoy exploring new technologies and experimenting with different tools to enhance my skills.",
+  },
+
+
+  {
+    question: "What motivates you as a front-end developer?",
+    answer: `As a front-end developer, my main motivation comes from the positive impact I can make on users' lives through my work. Creating intuitive and visually appealing interfaces that enhance user experiences brings me immense satisfaction. Additionally, the ever-evolving nature of technology keeps me motivated to stay curious and continuously improve my skills.`,
+  },
+  {
+    question: "How do you handle  stressful situations?",
+    answer: `To manage stress, I break down complex projects into smaller achievable tasks, which helps me stay focused and organized. Additionally, I maintain open communication with the team to address challenges assertive and ensure we are collectively working towards meeting the project's goals.`,
   },
 
   {
-      question: 'What programming skills do you have?',
-      answer: 'Languages: HTML, CSS, JavaScript, React, Bootstrap. Frameworks: React, Bootstrap. Technologies: GitHub, Webpack, Npm.'
-  },
-  {
-      question: 'What other skills do you have?',
-      answer: 'My background in psychology makes me a good team player with excellent communication and conflict management skills.'
+    question:
+      "Where do you see yourself in five years in terms of your front-end development career?",
+    answer:
+      "In five years, I envision myself as a senior front-end developer, leading and mentoring a team of passionate developers. I aspire to be actively involved in innovative projects that push the boundaries of web development and create meaningful solutions for users. Additionally, I plan to contribute to the tech community by sharing my knowledge and experiences through workshops and conferences.",
   },
 
-
   {
-      question: 'What are your goals for the future?',
-      answer: 'My future goals include becoming a full-stack developer and contributing to meaningful projects that make a positive impact.'
-  }
+    question:
+      "What projects or technologies would you like to learn more about?",
+    answer:
+      "I know that I still have to improve a lot in frontend development, but it gives me great excitement, and in the long term, I want to get there so that AI makes the life of ordinary people significantly easier through useful applications."
+  },
+ 
 ];
 
 function addChatEntry(sender, message, delay = 0, typingDelay = 80) {
   setTimeout(() => {
-    const chatDiv = document.createElement('div');
-    chatDiv.className = 'chat-entry';
+    const chatDiv = document.createElement("div");
+    chatDiv.className = "chat-entry";
 
-    const senderSpan = document.createElement('span');
-    senderSpan.className = 'sender';
+    const senderSpan = document.createElement("span");
+    senderSpan.className = "sender";
 
-    const messageSpan = document.createElement('span');
-    messageSpan.className = 'message';
+    const messageSpan = document.createElement("span");
+    messageSpan.className = "message";
 
     chatDiv.appendChild(senderSpan);
     chatDiv.appendChild(messageSpan);
     chatContainer.appendChild(chatDiv);
 
-    if (sender === 'Bot') {
-      // For "Bot" responses, add typing animation for "Bot:" prefix and the message
-      senderSpan.textContent = 'Bot:';
+    if (sender === "Viktor") {
+      senderSpan.textContent = "Viktor";
       const typingAnimation = () => {
         if (message.length > 0) {
           messageSpan.textContent += message.charAt(0);
           message = message.substring(1);
           setTimeout(typingAnimation, typingDelay);
         } else {
-          chatDiv.classList.add('show');
+          chatDiv.classList.add("show");
         }
       };
       setTimeout(typingAnimation, 50);
     } else {
-      senderSpan.textContent = 'You:';
+      senderSpan.textContent = "You";
       messageSpan.textContent = message;
-      chatDiv.classList.add('show');
+      chatDiv.classList.add("show");
     }
   }, delay);
 }
 
 function getBotResponse(userQuestion) {
-    userQuestion = userQuestion.toLowerCase().trim();
+  userQuestion = userQuestion.toLowerCase().trim();
 
-    for (const data of chatData) {
-        if (userQuestion === data.question.toLowerCase()) {
-            return data.answer;
-        }
+  for (const data of chatData) {
+    if (userQuestion === data.question.toLowerCase()) {
+      return data.answer;
     }
+  }
 
-    return "Sajnálom, nem értem a kérdésedet. Kérlek, válassz az alábbi lehetőségek közül: " + getChatOptions();
+
 }
 
-function getChatOptions() {
-    let options = '';
-    for (const data of chatData) {
-        options += data.question + ', ';
-    }
-    return options.slice(0, -2); 
-}
+
 
 function sendMessage(userMessage) {
-    addChatEntry('You', userMessage);
+  addChatEntry("You", userMessage);
 
-    const responseDelay = 500; 
-    setTimeout(() => {
-        const botResponse = getBotResponse(userMessage);
-        addChatEntry('Bot', botResponse, responseDelay);
-    }, responseDelay);
+  const responseDelay = 500;
+  setTimeout(() => {
+    const botResponse = getBotResponse(userMessage);
+    addChatEntry("Viktor", botResponse, responseDelay);
+  }, responseDelay);
 }
-
-

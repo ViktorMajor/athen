@@ -25,15 +25,6 @@ document.addEventListener("mouseup", function () {
   cursorinner.classList.remove("cursorinnerhover");
 });
 
-a.forEach((item) => {
-  item.addEventListener("mouseover", () => {
-    cursor.classList.add("hover");
-  });
-  item.addEventListener("mouseleave", () => {
-    cursor.classList.remove("hover");
-  });
-});
-
 window.addEventListener("scroll", function () {
   // A dokumentum teljes magassága
   let docHeight = Math.max(
@@ -130,3 +121,16 @@ toggleCheckbox.addEventListener("change", function () {
     contactPage.style.color = "#2d4356";
   }
 });
+
+const message = document.querySelectorAll(".messageButton");
+
+message.forEach((button) => {
+  button.addEventListener("click", (event) => {
+    const clickedButton = event.target;
+    clickedButton.style.backgroundColor = "#93a1bd";
+    clickedButton.style.color = "aliceblue";
+  });
+});
+
+
+
