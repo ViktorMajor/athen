@@ -1,4 +1,52 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Tektur:wght@400;700&display=swap");
+.arrows {
+	width: 60px;
+	height: 80px;
+	position: absolute;
+	left: 50%;
+	margin-left: -30px;
+	bottom: 40px;
+}
+
+.arrows path {
+	stroke: white;
+	fill: transparent;
+	stroke-width: 4px;	
+	animation: arrow 2s infinite;
+	-webkit-animation: arrow 2s infinite; 
+}
+
+@keyframes arrow
+{
+0% {opacity:0}
+40% {opacity:1}
+80% {opacity:0}
+100% {opacity:0}
+}
+
+@-webkit-keyframes arrow /*Safari and Chrome*/
+{
+0% {opacity:0}
+40% {opacity:1}
+80% {opacity:0}
+100% {opacity:0}
+}
+
+.arrows path.a1 {
+	animation-delay:-1s;
+	-webkit-animation-delay:-1s; /* Safari 和 Chrome */
+}
+
+.arrows path.a2 {
+	animation-delay:-0.5s;
+	-webkit-animation-delay:-0.5s; /* Safari 和 Chrome */
+}
+
+.arrows path.a3 {	
+	animation-delay:0s;
+	-webkit-animation-delay:0s; /* Safari 和 Chrome */
+}
+
 
 * {
   box-sizing: border-box;
@@ -69,7 +117,6 @@ a:hover:after {
   width: 20px;
   height: 20px;
   border: 1px solid #132331;
-
   border-radius: 100%;
   background-color: #93a1bd;
   position: fixed;
@@ -78,10 +125,6 @@ a:hover:after {
   transition: width 0.5s, height 0.5s, opacity 0.5s;
   z-index: 9999;
 }
-
-
-
-
 
 body {
   font-family: Tektur;
@@ -93,43 +136,53 @@ body {
   cursor: none;
 }
 
-
-
-
 .chat-entry {
   display: flex;
   margin: 2px;
   flex-direction: column;
   max-width: 80%;
-  min-width: 25%;
+  min-width: min-content;
   font-size: 14px;
 }
 
-.chat-entry:nth-child(2n+1) {
+.chat-entry:nth-child(2n + 1) {
   margin-left: auto;
+}
+.chat-entry:nth-child(2n) .message {
+  background-color: #93a1bd;
+  color: aliceblue;
 }
 
 .sender {
   font-weight: bold;
   margin: 2px;
 }
-.message{
+.message {
   background: white;
+  display: inline-block;
   padding: 10px;
+  width: fit-content;
   text-align: justify;
   border-radius: 15px;
   color: rgb(45, 67, 86);
 }
 
-#options-container {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 15px 0;
+
+  #options-container {
+    border-radius: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px 0;
+    position: sticky;
+    top: 76px;
+    justify-content: space-evenly;
+    background: rgb(251 251 251 / 25%);
+    backdrop-filter: blur(10px);
 }
 
 button {
   background: #00000000;
-  font-size: 20px;
+  font-size: 14px;
   cursor: pointer;
 }
 
@@ -145,11 +198,11 @@ button {
   background-size: cover;
   background-position: center center;
   width: 100vw;
-  padding: 4vw;
-  height: 100vh;
+  padding: 0 4vw;
+  height: 102vh;
   opacity: 0;
   margin-top: -90px;
-  margin-bottom: -10px;
+  margin-bottom: 50px;
   animation: expand 2s ease-in-out forwards;
   mask-image: radial-gradient(
     circle,
@@ -418,10 +471,10 @@ input:checked + .slider:before {
 .contact,
 button {
   display: inline-block;
-  padding: 10px;
+  padding: 5px;
   border: 3px solid #93a1bd;
   border-radius: 15px;
-  margin: 5px;
+  margin: 2px;
 }
 
 .contact:hover {
@@ -461,26 +514,24 @@ button {
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
-  padding:0 15px;
+  padding: 0 15px;
 }
 
 .introduction {
   grid-row-start: 1;
-   grid-column-start: 1;
+  grid-column-start: 1;
 
-   grid-row-end: 3;
-   grid-column-end: 4;
+  grid-row-end: 3;
+  grid-column-end: 4;
 }
 
 .skills {
   grid-row-start: 3;
-   grid-column-start: 1;
+  grid-column-start: 1;
 
-   grid-row-end: 5;
-   grid-column-end: 4;
+  grid-row-end: 5;
+  grid-column-end: 4;
 }
-
-
 
 .text {
   padding: 0 15px;
@@ -496,12 +547,12 @@ button {
 }
 
 .details h2 {
-  margin-bottom: 10px; 
+  margin-bottom: 10px;
 }
 
 .details ul {
-  list-style-type: none; 
-  padding: 0; 
+  list-style-type: none;
+  padding: 0;
 }
 
 .details li {
@@ -513,6 +564,9 @@ button {
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 5px 5px;
+}
+#projects h1 {
+  padding: 0 15px;
 }
 
 .project-card {
@@ -635,7 +689,7 @@ button {
 }
 
 @media screen and (max-width: 768px) {
-  #about{
+  #about {
     display: flex;
   }
   .large-text {
@@ -668,7 +722,7 @@ button {
 }
 
 @media screen and (max-width: 500px) {
-  #about{
+  #about {
     display: flex;
   }
   .cursor,
@@ -716,6 +770,10 @@ button {
 
   #chat-container {
     width: 100%;
+  }
+  #options-container {
+  
+    top: 19px;
   }
 
   #projects div {

@@ -4,7 +4,7 @@ const sendButton = document.getElementById("sendButton");
 const chatData = [
   {
     question: "Hello!",
-    answer: `Hello! Thank you for reaching out.`,
+    answer: `Hello! My name is Viktor Major. Thank you for contacting me. What are you curious about?`,
   },
   {
     question:
@@ -53,10 +53,16 @@ const chatData = [
     answer:
       "I know that I still have to improve a lot in frontend development, but it gives me great excitement, and in the long term, I want to get there so that AI makes the life of ordinary people significantly easier through useful applications."
   },
+  {
+    question:
+      "How can I contact you?",
+    answer:
+      "Email me at the bottom of the page or find me on social media."
+  },
  
 ];
 
-function addChatEntry(sender, message, delay = 0, typingDelay = 80) {
+function addChatEntry(sender, message, delay = 0, typingDelay = 40) {
   setTimeout(() => {
     const chatDiv = document.createElement("div");
     chatDiv.className = "chat-entry";

@@ -15,18 +15,10 @@ document.addEventListener("mousemove", function (e) {
   cursorinner.style.top = y + "px";
 });
 
-document.addEventListener("mousedown", function () {
-  cursor.classList.add("click");
-  cursorinner.classList.add("cursorinnerhover");
-});
 
-document.addEventListener("mouseup", function () {
-  cursor.classList.remove("click");
-  cursorinner.classList.remove("cursorinnerhover");
-});
+
 
 window.addEventListener("scroll", function () {
-  // A dokumentum teljes magassága
   let docHeight = Math.max(
     document.body.scrollHeight,
     document.documentElement.scrollHeight,
@@ -38,26 +30,21 @@ window.addEventListener("scroll", function () {
 
   let viewportHeight = window.innerHeight;
 
-  // A görgetési pozíció
   let scrollPosition =
     window.scrollY ||
     window.pageYOffset ||
     document.body.scrollTop +
       ((document.documentElement && document.documentElement.scrollTop) || 0);
 
-  // A viewport magasságának hozzáadása a scroll pozícióhoz
   let scrollBottomPosition = scrollPosition + viewportHeight;
 
-  // A görgetési pozíció aránya a teljes oldalhoz
   let scrollRatio = scrollBottomPosition / docHeight;
 
-  // A "border" szélességének beállítása
   document.querySelector("#scroll-border").style.transform =
     "scaleX(" + scrollRatio + ")";
 });
 
 window.addEventListener("DOMContentLoaded", (event) => {
-  // Get the elements
   const welcome = document.querySelector(".welcome");
   const about = document.querySelector(".about");
   const projects = document.querySelector(".projects");
@@ -81,15 +68,28 @@ window.addEventListener("DOMContentLoaded", (event) => {
   contactA.style.width = `${100 - contactPos}%`;
 });
 
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault();
+const links = document.querySelectorAll('a[href^="#"]');
 
-    document.querySelector(this.getAttribute("href")).scrollIntoView({
-      behavior: "smooth",
-    });
+links.forEach(link => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault(); 
+    const targetId = link.getAttribute('href').substring(1); 
+
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      const offset = -100; 
+      const elementPosition = targetElement.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY + offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
   });
 });
+
+
 
 const toggleCheckbox = document.querySelector(".toggle-checkbox");
 const link = document.querySelector(".social-links a");
