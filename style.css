@@ -96,7 +96,7 @@ a:after {
 a:hover:after {
   width: 100%;
   left: 0%;
-  background: aliceblue;
+  background: #4569b0;
 }
 
 .cursor {
@@ -153,7 +153,7 @@ body {
   color: aliceblue;
 }
 .chat-entry:nth-child(2n + 1) {
-  margin-top: -6px;
+  margin-top: -16px;
 }
 
 .sender {
