@@ -88,7 +88,7 @@ function addChatEntry(sender, message, delay = 0, typingDelay = 40) {
           chatDiv.classList.add("show");
         }
       };
-      setTimeout(typingAnimation, 50);
+      setTimeout(typingAnimation, 40);
     } else {
       senderSpan.textContent = "You";
       messageSpan.textContent = message;
@@ -114,7 +114,7 @@ function getBotResponse(userQuestion) {
 function sendMessage(userMessage) {
   addChatEntry("You", userMessage);
 
-  const responseDelay = 500;
+  const responseDelay = 200;
   setTimeout(() => {
     const botResponse = getBotResponse(userMessage);
     addChatEntry("Viktor", botResponse, responseDelay);
