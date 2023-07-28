@@ -641,9 +641,9 @@ button {
 .contact-page {
   width: 80%;
   margin: auto;
-
   color: #132331;
 }
+
 .contact-form {
   display: flex;
   flex-direction: column;
