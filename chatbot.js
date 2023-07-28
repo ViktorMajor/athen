@@ -109,9 +109,6 @@ function getBotResponse(userQuestion) {
 
 
 }
-
-
-
 function sendMessage(userMessage) {
   addChatEntry("You", userMessage);
 
