@@ -1,52 +1,65 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Tektur:wght@400;700&display=swap");
 .arrows {
-	width: 60px;
-	height: 80px;
-	position: absolute;
-	left: 50%;
-	margin-left: -30px;
-	bottom: 40px;
+  width: 60px;
+  height: 80px;
+  position: absolute;
+  left: 50%;
+  margin-left: -30px;
+  bottom: 40px;
 }
 
 .arrows path {
-	stroke: white;
-	fill: transparent;
-	stroke-width: 4px;	
-	animation: arrow 2s infinite;
-	-webkit-animation: arrow 2s infinite; 
+  stroke: white;
+  fill: transparent;
+  stroke-width: 4px;
+  animation: arrow 2s infinite;
+  -webkit-animation: arrow 2s infinite;
 }
 
-@keyframes arrow
-{
-0% {opacity:0}
-40% {opacity:1}
-80% {opacity:0}
-100% {opacity:0}
+@keyframes arrow {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
-@-webkit-keyframes arrow /*Safari and Chrome*/
-{
-0% {opacity:0}
-40% {opacity:1}
-80% {opacity:0}
-100% {opacity:0}
+@-webkit-keyframes arrow /*Safari and Chrome*/ {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 .arrows path.a1 {
-	animation-delay:-1s;
-	-webkit-animation-delay:-1s; /* Safari 和 Chrome */
+  animation-delay: -1s;
+  -webkit-animation-delay: -1s; /* Safari 和 Chrome */
 }
 
 .arrows path.a2 {
-	animation-delay:-0.5s;
-	-webkit-animation-delay:-0.5s; /* Safari 和 Chrome */
+  animation-delay: -0.5s;
+  -webkit-animation-delay: -0.5s; /* Safari 和 Chrome */
 }
 
-.arrows path.a3 {	
-	animation-delay:0s;
-	-webkit-animation-delay:0s; /* Safari 和 Chrome */
+.arrows path.a3 {
+  animation-delay: 0s;
+  -webkit-animation-delay: 0s; /* Safari 和 Chrome */
 }
-
 
 * {
   box-sizing: border-box;
@@ -138,22 +151,19 @@ body {
 
 .chat-entry {
   display: flex;
-  margin: 2px;
+  margin: 5px;
   flex-direction: column;
   max-width: 80%;
   min-width: min-content;
   font-size: 14px;
 }
 
-.chat-entry:nth-child(2n ) {
+.chat-entry:nth-child(2n) {
   margin-left: auto;
 }
 .chat-entry:nth-child(2n + 1) .message {
   background-color: #93a1bd;
   color: aliceblue;
-}
-.chat-entry:nth-child(2n + 1) {
-  margin-top: -6px;
 }
 
 .sender {
@@ -171,17 +181,12 @@ body {
   color: rgb(45, 67, 86);
 }
 
-
-  #options-container {
-    border-radius: 15px;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 15px 0;
-    position: sticky;
-    top: 76px;
-    justify-content: space-evenly;
-    background: rgb(251 251 251 / 25%);
-    backdrop-filter: blur(10px);
+#options-container {
+  border-radius: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 15px 0;
+  justify-content: space-evenly;
 }
 
 button {
@@ -203,7 +208,7 @@ button {
   background-position: center center;
   width: 100vw;
   padding: 0 4vw;
-  height: 102vh;
+  height: 103vh;
   opacity: 0;
   margin-top: -90px;
   margin-bottom: 50px;
@@ -512,12 +517,18 @@ button {
 #chat-container {
   grid-row-start: 1;
   grid-column-start: 4;
-  grid-row-end: 5;
+  grid-row-end: 3;
   grid-column-end: 6;
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
   padding: 0 15px;
+}
+#answer-container {
+  max-height: 350px;
+  overflow: auto;
+  border-radius: 15px;
+  border: 1px solid #93a1bd;
 }
 
 .introduction {
@@ -532,7 +543,7 @@ button {
   grid-column-start: 1;
 
   grid-row-end: 5;
-  grid-column-end: 4;
+  grid-column-end: 6;
 }
 
 .text {
@@ -774,7 +785,6 @@ button {
     width: 100%;
   }
   #options-container {
-  
     top: 19px;
   }
 

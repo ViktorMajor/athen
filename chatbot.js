@@ -1,4 +1,5 @@
 const chatContainer = document.getElementById("chat-container");
+const answerContainer = document.getElementById("answer-container");
 const sendButton = document.getElementById("sendButton");
 
 const chatData = [
@@ -75,7 +76,7 @@ function addChatEntry(sender, message, delay = 0, typingDelay = 40) {
 
     chatDiv.appendChild(senderSpan);
     chatDiv.appendChild(messageSpan);
-    chatContainer.appendChild(chatDiv);
+    answerContainer.appendChild(chatDiv);
 
     if (sender === "Viktor") {
       senderSpan.textContent = "Viktor";
