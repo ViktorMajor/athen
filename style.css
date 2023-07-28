@@ -129,7 +129,7 @@ a:hover:after {
 body {
   font-family: Tektur;
   color: aliceblue;
-  font-size: 16px;
+  font-size: 14px;
   background-color: aliceblue;
   margin: 0;
   width: 100vw;
@@ -145,10 +145,10 @@ body {
   font-size: 14px;
 }
 
-.chat-entry:nth-child(2n + 1) {
+.chat-entry:nth-child(2n ) {
   margin-left: auto;
 }
-.chat-entry:nth-child(2n) .message {
+.chat-entry:nth-child(2n + 1) .message {
   background-color: #93a1bd;
   color: aliceblue;
 }
@@ -161,6 +161,7 @@ body {
   background: white;
   display: inline-block;
   padding: 10px;
+  font-size: 12px;
   width: fit-content;
   text-align: justify;
   border-radius: 15px;
@@ -182,7 +183,7 @@ body {
 
 button {
   background: #00000000;
-  font-size: 14px;
+  font-size: 12px;
   cursor: pointer;
 }
 
@@ -327,7 +328,7 @@ header {
   position: absolute;
   bottom: 0;
   left: 0;
-  height: 27px;
+  height: 19px;
   width: 100%;
   background: linear-gradient(to right, #ffffff, #93a1bd);
   transform-origin: left;
@@ -346,7 +347,7 @@ header div {
 header h1,
 header p {
   margin: 0;
-  font-size: 20px;
+  font-size: 16px;
   text-shadow: 0 0 4px #000000;
 }
 header h1 {
@@ -439,10 +440,10 @@ input:checked + .slider:before {
   font-family: "Montserrat", sans-serif;
   margin: 0;
   line-height: 0.8;
-  font-size: 105px;
+  font-size: 75px;
   font-weight: 700;
-  letter-spacing: -3px;
-  text-shadow: 0 2px 2px #132331;
+  letter-spacing: 10px;
+  text-shadow: 0 4px 1px #132331;
 }
 
 .text-2 {
@@ -464,8 +465,8 @@ input:checked + .slider:before {
 
 .text-2 p,
 .contact {
-  font-size: 25px;
-  text-shadow: 0 0 1px #000000;
+  font-size: 22px;
+  text-shadow: 0 2px 1px #000000;
 }
 
 .contact,
