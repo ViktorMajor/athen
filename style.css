@@ -867,4 +867,7 @@ button {
   .skillset div {
     display: flex;
   }
+  .skillset img {
+    width: 18vw;
+  }
 }
