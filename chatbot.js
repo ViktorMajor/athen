@@ -11,50 +11,34 @@ const chatData = [
   {
     question:
       "Can you tell me about your previous experiences as a front-end developer?",
-    answer: `Certainly! I have been involved in front-end development through various volunteer projects and have completed training at CodeBerry School, The Odin Project, and Harvard's CS50. These experiences have provided me with a strong foundation in HTML, CSS, and JavaScript, along with expertise in using popular frameworks like React and Bootstrap.`,
+    answer: `So far I've been working on my own projects, most of which can be found on my public github page and some of which are in this protfolio. I'm also working on another portfolio site for a friend who runs an engraving business. This is a close collaboration for which I am already getting paid. `,
   },
   {
     question:
-      "How has your background in psychology influenced your approach to front-end development?",
-    answer: `My background in psychology has been a valuable asset in my front-end development journey. Understanding user behavior and emotions allows me to create user-centric interfaces that not only function seamlessly but also resonate with users on a deeper level. By prioritizing the user experience, I aim to craft applications that are not only visually appealing but also emotionally engaging, thus leaving a lasting positive impact on users.`,
+      "How does your psychological background influence your approach to front-end development?",
+    answer: `My knowledge of psychology is most useful in running workplace systems and dealing with clients. Or, in the longer term, it gives me the opportunity to specialise in the development of psychology-related applications.`,
   },
   {
     question:
-      "Apart from technical skills, do you possess any other relevant skills?",
+      "What other relevant skills do you have?",
     answer:
-      "Absolutely! My psychology background has cultivated strong communication and collaboration skills, making me an effective team player. I believe in open and transparent communication within the team, which leads to better problem-solving and project outcomes. Additionally, my conflict management skills help foster a positive and productive work environment.",
+      "I am a good team player because of my strong soft skills. (Communication skills,kindness, assertiveness, etc.) and one of my most important and characteristic qualities is curiosity, which helps a lot in everyday life.",
   },
-
-  {
-    question:
-      "How do you stay updated with the latest trends and advancements in front-end development?",
-    answer:
-      "Continuous learning is crucial in the fast-paced world of front-end development. I regularly follow industry blogs. I enjoy exploring new technologies and experimenting with different tools to enhance my skills.",
-  },
-
 
   {
     question: "What motivates you as a front-end developer?",
-    answer: `As a front-end developer, my main motivation comes from the positive impact I can make on users' lives through my work. Creating intuitive and visually appealing interfaces that enhance user experiences brings me immense satisfaction. Additionally, the ever-evolving nature of technology keeps me motivated to stay curious and continuously improve my skills.`,
-  },
-  {
-    question: "How do you handle  stressful situations?",
-    answer: `To manage stress, I break down complex projects into smaller achievable tasks, which helps me stay focused and organized. Additionally, I maintain open communication with the team to address challenges assertive and ensure we are collectively working towards meeting the project's goals.`,
+    answer: `My main motivation is creation and the resulting positive impact
+    which I can exercise on users. Creating intuitive and attractive interfaces gives me satisfaction. Also, the ever-evolving nature of technology motivates me to be curious and improve my skills.`,
   },
 
   {
     question:
       "Where do you see yourself in five years in terms of your front-end development career?",
     answer:
-      "In five years, I envision myself as a senior front-end developer, leading and mentoring a team of passionate developers. I aspire to be actively involved in innovative projects that push the boundaries of web development and create meaningful solutions for users. Additionally, I plan to contribute to the tech community by sharing my knowledge and experiences through workshops and conferences.",
+      "In five years, I imagine myself as a senior front-end developer, leading and mentoring a team of good developers. As for projects, I would like to be able to work on an application that can help people with the help of AI, either as an entrepreneur or otherwise for example, in maintaining their mental health.I also created a rudimentary application on this topic that evaluates psychological tests.",
   },
 
-  {
-    question:
-      "What projects or technologies would you like to learn more about?",
-    answer:
-      "I know that I still have to improve a lot in frontend development, but it gives me great excitement, and in the long term, I want to get there so that AI makes the life of ordinary people significantly easier through useful applications."
-  },
+ 
   {
     question:
       "How can I contact you?",

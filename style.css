@@ -525,28 +525,28 @@ button {
 
 #chat-container {
   height: 100%;
-  width: 50%;
+  width: 35%;
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
   padding: 0 15px;
 }
 #answer-container {
-  max-height: 475px;
+  max-height: 550px;
   padding: 0 10px;
   overflow: auto;
   border-radius: 15px;
   border: 1px solid #93a1bd;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
 }
-#answer-container img {
+#chat-container img {
   width: 40px;
   border-radius: 50%;
   margin: 0 5px;
 }
 
 .introduction {
-  width: 50%;
+  width: 65%;
 }
 
 .skills {
