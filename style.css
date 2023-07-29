@@ -153,17 +153,24 @@ body {
   display: flex;
   margin: 5px;
   flex-direction: column;
+  justify-self: start;
   max-width: 80%;
   min-width: min-content;
   font-size: 14px;
+  align-items: flex-start;
 }
 
-.chat-entry:nth-child(2n) {
+.chat-entry:nth-child(odd) {
+  align-items: flex-end;
   margin-left: auto;
+    width: fit-content;
+    
 }
+
 .chat-entry:nth-child(2n + 1) .message {
   background-color: #93a1bd;
   color: aliceblue;
+  border-radius: 15px 0 15px 15px;
 }
 
 .sender {
@@ -171,13 +178,14 @@ body {
   margin: 2px;
 }
 .message {
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
   background: white;
   display: inline-block;
   padding: 10px;
-  font-size: 12px;
+  
   width: fit-content;
   text-align: justify;
-  border-radius: 15px;
+  border-radius:0 15px  15px 15px;
   color: rgb(45, 67, 86);
 }
 
@@ -520,11 +528,18 @@ button {
   padding: 0 15px;
 }
 #answer-container {
-  max-height: 350px;
+  max-height: 575px;
+ 
   overflow: auto;
   border-radius: 15px;
   border: 1px solid #93a1bd;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+}
+#answer-container img {
+  width: 40px;
+  border-radius: 50%;
+  margin: 0 5px;
+ 
 }
 
 .introduction {
@@ -532,10 +547,7 @@ button {
 }
 
 .skills {
-
 margin: 50px -15px;
-
-
 }
 
 .text {
@@ -590,7 +602,7 @@ margin: 50px -15px;
 
 
 .skillset img {
-  width: 80px;
+  width: 100px;
 }
 .skillset p {
   display: none;
@@ -607,12 +619,17 @@ margin: 50px -15px;
   z-index: 1;
 }
 .skill {
-
   display: inline-block;
   border-radius: 15px;
   padding: 10px;
+  margin: 5px;
   border: 1px solid #93a1bd;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease-in-out;
+}
+
+.skill:hover {
+  transform: scale(1.15);
 }
 
 #projects div {

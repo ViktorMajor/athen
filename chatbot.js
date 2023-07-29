@@ -2,6 +2,7 @@ const chatContainer = document.getElementById("chat-container");
 const answerContainer = document.getElementById("answer-container");
 const sendButton = document.getElementById("sendButton");
 
+
 const chatData = [
   {
     question: "Hello!",
@@ -79,7 +80,7 @@ function addChatEntry(sender, message, delay = 0, typingDelay = 40) {
     answerContainer.appendChild(chatDiv);
 
     if (sender === "Viktor") {
-      senderSpan.textContent = "Viktor";
+      senderSpan.innerHTML =`<img src="pictures/profile.jpeg" alt = "profile">`;
       const typingAnimation = () => {
         if (message.length > 0) {
           messageSpan.textContent += message.charAt(0);
@@ -91,7 +92,7 @@ function addChatEntry(sender, message, delay = 0, typingDelay = 40) {
       };
       setTimeout(typingAnimation, 40);
     } else {
-      senderSpan.textContent = "You";
+      senderSpan.innerHTML =`<p>You</p>`;
       messageSpan.textContent = message;
       chatDiv.classList.add("show");
     }
