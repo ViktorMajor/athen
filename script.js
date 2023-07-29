@@ -106,7 +106,7 @@ toggleCheckbox.addEventListener("change", function () {
     miro.style.color = "aliceblue";
     miro.style.backgroundColor = "#2d4356";
     welcome.style.backgroundImage =
-      'linear-gradient(rgba(0, 0, 0, 0.4), rgba(7, 25, 82, 0.7)), url("pictures/athen.png")';
+      'linear-gradient(rgba(0, 0, 0, 0.4), rgba(7, 25, 82, 0.7)), url("pictures/athen1.png")';
     contactPage.style.color = "aliceblue";
   } else {
     //light mode
@@ -115,7 +115,7 @@ toggleCheckbox.addEventListener("change", function () {
       button.style.color = "#2d4356";
     });
     welcome.style.backgroundImage =
-      'linear-gradient(rgba(0, 0, 0, 0.2), rgba(7, 25, 82, 0.4)), url("pictures/athen.png")';
+      'linear-gradient(rgba(0, 0, 0, 0.2), rgba(7, 25, 82, 0.4)), url("pictures/athen1.png")';
     miro.style.backgroundColor = "aliceblue";
     miro.style.color = "#2d4356";
     contactPage.style.color = "#2d4356";
