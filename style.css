@@ -60,7 +60,12 @@
   animation-delay: 0s;
   -webkit-animation-delay: 0s; /* Safari 和 Chrome */
 }
-
+.eng {
+  display: block;
+}
+.hu {
+  display: none;
+}
 * {
   box-sizing: border-box;
 }
