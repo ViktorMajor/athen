@@ -163,8 +163,7 @@ body {
 .chat-entry:nth-child(odd) {
   align-items: flex-end;
   margin-left: auto;
-    width: fit-content;
-    
+  width: fit-content;
 }
 
 .chat-entry:nth-child(2n + 1) .message {
@@ -182,10 +181,10 @@ body {
   background: white;
   display: inline-block;
   padding: 10px;
-  
+
   width: fit-content;
   text-align: justify;
-  border-radius:0 15px  15px 15px;
+  border-radius: 0 15px 15px 15px;
   color: rgb(45, 67, 86);
 }
 
@@ -528,8 +527,8 @@ button {
   padding: 0 15px;
 }
 #answer-container {
-  max-height: 575px;
- 
+  max-height: 475px;
+  padding: 0 10px;
   overflow: auto;
   border-radius: 15px;
   border: 1px solid #93a1bd;
@@ -539,7 +538,6 @@ button {
   width: 40px;
   border-radius: 50%;
   margin: 0 5px;
- 
 }
 
 .introduction {
@@ -547,7 +545,7 @@ button {
 }
 
 .skills {
-margin: 50px -15px;
+  margin: 50px -15px;
 }
 
 .text {
@@ -560,7 +558,6 @@ margin: 50px -15px;
 }
 
 .details {
-
   margin: auto;
   width: fit-content;
   padding: 15px;
@@ -585,7 +582,6 @@ margin: 50px -15px;
 
 .skillset {
   margin: 0 25px;
-
 }
 .skillset:first-child {
   margin-left: 0;
@@ -595,11 +591,10 @@ margin: 50px -15px;
 }
 .skillset div {
   display: inline-block;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-
 
 .skillset img {
   width: 100px;
@@ -638,7 +633,8 @@ margin: 50px -15px;
   justify-content: space-between;
   padding: 5px 5px;
 }
-.skills h1, #projects h1 {
+.skills h1,
+#projects h1 {
   padding: 0 15px;
 }
 
@@ -810,7 +806,7 @@ margin: 50px -15px;
     height: 26px;
   }
   header {
-    top: -52px;
+    top: -41px;
   }
   .large-text {
     font-size: 60px;
