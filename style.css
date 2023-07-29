@@ -203,7 +203,7 @@ button {
   align-items: center;
   justify-content: center;
   background: linear-gradient(rgba(0, 0, 0, 0.02), rgba(7, 25, 82, 0.4)),
-    url("athen.png");
+    url("pictures/athen1.png");
   background-size: cover;
   background-position: center center;
   width: 100vw;
@@ -482,7 +482,7 @@ input:checked + .slider:before {
 button {
   display: inline-block;
   padding: 5px;
-  border: 3px solid #93a1bd;
+  border: 1px solid #93a1bd;
   border-radius: 15px;
   margin: 2px;
 }
@@ -503,11 +503,8 @@ button {
   display: none;
 }
 #about {
-  display: grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  display: flex;
+
   align-items: flex-start;
 
   margin: -15px 0;
@@ -515,10 +512,8 @@ button {
 }
 
 #chat-container {
-  grid-row-start: 1;
-  grid-column-start: 4;
-  grid-row-end: 3;
-  grid-column-end: 6;
+  height: 100%;
+  width: 50%;
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
@@ -532,20 +527,15 @@ button {
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
 }
 
-
 .introduction {
-  grid-row-start: 1;
-  grid-column-start: 1;
-  grid-row-end: 3;
-  grid-column-end: 4;
+  width: 50%;
 }
 
 .skills {
-  grid-row-start: 3;
-  grid-column-start: 1;
 
-  grid-row-end: 5;
-  grid-column-end: 6;
+margin: 50px -15px;
+
+
 }
 
 .text {
@@ -558,7 +548,14 @@ button {
 }
 
 .details {
-  margin-bottom: 30px;
+
+  margin: auto;
+  width: fit-content;
+  padding: 15px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .details h2 {
@@ -574,13 +571,57 @@ button {
   line-height: 1.6;
 }
 
+.skillset {
+  margin: 0 25px;
+
+}
+.skillset:first-child {
+  margin-left: 0;
+}
+.skillset:last-child {
+  margin-right: 0;
+}
+.skillset div {
+  display: inline-block;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.skillset img {
+  width: 80px;
+}
+.skillset p {
+  display: none;
+}
+
+/* Style the bubble */
+.skillset p {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  width: 25vw;
+  z-index: 1;
+}
+.skill {
+
+  display: inline-block;
+  border-radius: 15px;
+  padding: 10px;
+  border: 1px solid #93a1bd;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
 #projects div {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 5px 5px;
 }
-#projects h1 {
+.skills h1, #projects h1 {
   padding: 0 15px;
 }
 
@@ -799,5 +840,11 @@ button {
   .contact-page {
     width: auto;
     margin: 50px 15px;
+  }
+  .skillset {
+    margin: 0px 10px;
+  }
+  .skillset div {
+    display: flex;
   }
 }

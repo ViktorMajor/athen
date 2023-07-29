@@ -132,5 +132,17 @@ message.forEach((button) => {
   });
 });
 
+const imagesWithText = document.querySelectorAll('.skillset img + p');
 
+// Attach event listeners to each image
+imagesWithText.forEach((image) => {
+  // Show the text when the mouse enters the image
+  image.previousElementSibling.addEventListener('mouseenter', () => {
+    image.style.display = 'block';
+  });
 
+  // Hide the text when the mouse leaves the image
+  image.previousElementSibling.addEventListener('mouseleave', () => {
+    image.style.display = 'none';
+  });
+});
