@@ -132,7 +132,7 @@ projectCards.forEach((projectCard, index) => {
   projectCard.addEventListener("click", function () {
     setTimeout(() => {
       projectDescriptions[index].style.display = "block";
-    }, 301);
+    }, 289);
     projectImages[index].style.maxHeight = "0"; 
   });
 
