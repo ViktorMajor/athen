@@ -221,10 +221,10 @@ button {
   width: 100vw;
   padding: 0 4vw;
   height: 103vh;
-  opacity: 0;
+
   margin-top: -90px;
   margin-bottom: 50px;
-  animation: expand 2s ease-in-out forwards;
+
   mask-image: radial-gradient(
     circle,
     rgba(0, 0, 0, 1) 30%,
@@ -234,16 +234,7 @@ button {
   mask-position: center;
 }
 
-@keyframes expand {
-  0% {
-    opacity: 0;
-    mask-size: 0px 0px;
-  }
-  100% {
-    opacity: 1;
-    mask-size: 2000px 2000px;
-  }
-}
+
 
 header {
   width: 100vw;
@@ -434,27 +425,13 @@ input:checked + .slider:before {
 }
 .text-1 {
   position: relative;
-  opacity: 0;
-  transform: rotateY(-90deg);
-  animation: slideLeft 2s cubic-bezier(0.23, 1, 0.32, 1) forwards 2s;
+  transform: rotateY(-10deg);
 }
 .text-1 p {
   margin: 0;
 }
 
-@keyframes slideLeft {
-  0% {
-    opacity: 0;
-    transform: rotateY(-90deg);
-  }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 1;
-    transform: rotateY(0deg);
-  }
-}
+
 
 .large-text {
   font-family: "Montserrat", sans-serif;
@@ -471,18 +448,13 @@ input:checked + .slider:before {
   margin-bottom: -50px;
   margin-left: auto;
   position: relative;
-  right: -100%;
-  animation: slideFromRight 1s forwards 3s;
+  
 }
 .text-2 p {
   text-shadow: 0 2px 2px #132331;
 }
 
-@keyframes slideFromRight {
-  to {
-    right: 0;
-  }
-}
+
 
 .text-2 p,
 .contact {
