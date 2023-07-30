@@ -15,9 +15,6 @@ document.addEventListener("mousemove", function (e) {
   cursorinner.style.top = y + "px";
 });
 
-
-
-
 window.addEventListener("scroll", function () {
   let docHeight = Math.max(
     document.body.scrollHeight,
@@ -47,6 +44,7 @@ window.addEventListener("scroll", function () {
 window.addEventListener("DOMContentLoaded", (event) => {
   const welcome = document.querySelector(".welcome");
   const about = document.querySelector(".about");
+
   const projects = document.querySelector(".projects");
   const contactPage = document.querySelector(".contact-page");
 
@@ -70,60 +68,81 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
 const links = document.querySelectorAll('a[href^="#"]');
 
-links.forEach(link => {
-  link.addEventListener('click', (event) => {
-    event.preventDefault(); 
-    const targetId = link.getAttribute('href').substring(1); 
+links.forEach((link) => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+    const targetId = link.getAttribute("href").substring(1);
 
     const targetElement = document.getElementById(targetId);
     if (targetElement) {
-      const offset = -100; 
+      const offset = -100;
       const elementPosition = targetElement.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.scrollY + offset;
 
       window.scrollTo({
         top: offsetPosition,
-        behavior: 'smooth'
+        behavior: "smooth",
       });
     }
   });
 });
 
-
-
 const toggleCheckbox = document.querySelector(".toggle-checkbox");
-const link = document.querySelector(".social-links a");
+const socialLinks = document.querySelectorAll(".social-links a");
 const contactPage = document.querySelector(".contact-page");
-const messageButtons = document.getElementsByClassName("messageButton");
+const messageButtons = document.querySelectorAll(".messageButton");
+const projectName = document.querySelectorAll(".project-name");
+const body = document.body;
+const welcome = document.getElementById("welcome");
+const miro = document.getElementById("miro");
+
 toggleCheckbox.addEventListener("change", function () {
-  // dark mode
-  if (this.checked) {
-    document.body.style.backgroundColor = "#2d4356";
-    Array.from(messageButtons).forEach((button) => {
-      button.style.color = "aliceblue";
-    });
+  const darkMode = this.checked;
+
+  if (darkMode) {
+    // Dark mode
+    body.style.backgroundColor = "#182836";
+    socialLinks.forEach((link) => (link.style.color = "aliceblue"));
+    messageButtons.forEach((button) => (button.style.color = "aliceblue"));
+    projectName.forEach((h1) => (h1.style.color = "#182836"));
 
     miro.style.color = "aliceblue";
-    miro.style.backgroundColor = "#2d4356";
+    miro.style.backgroundColor = "#182836";
     welcome.style.backgroundImage =
       'linear-gradient(rgba(0, 0, 0, 0.4), rgba(7, 25, 82, 0.7)), url("pictures/athen1.png")';
     contactPage.style.color = "aliceblue";
   } else {
-    //light mode
-    document.body.style.backgroundColor = "aliceblue";
-    Array.from(messageButtons).forEach((button) => {
-      button.style.color = "#2d4356";
-    });
+    // Light mode
+    body.style.backgroundColor = "aliceblue";
+    socialLinks.forEach((link) => (link.style.color = "#182836"));
+    messageButtons.forEach((button) => (button.style.color = "#182836"));
     welcome.style.backgroundImage =
-      'linear-gradient(rgba(0, 0, 0, 0.2), rgba(7, 25, 82, 0.4)), url("pictures/athen1.png")';
+      'linear-gradient(rgba(0, 0, 0, 0.2), rgb(24 40 54 / 40%)), url("pictures/athen1.png")';
     miro.style.backgroundColor = "aliceblue";
-    miro.style.color = "#2d4356";
-    contactPage.style.color = "#2d4356";
+    miro.style.color = "#182836";
+    contactPage.style.color = "#182836";
   }
 });
 
-const message = document.querySelectorAll(".messageButton");
+const projectCards = document.querySelectorAll(".project-card");
+const projectImages = document.querySelectorAll(".project-image");
+const projectDescriptions = document.querySelectorAll(".project-description");
 
+projectCards.forEach((projectCard, index) => {
+  projectCard.addEventListener("click", function () {
+    setTimeout(() => {
+      projectDescriptions[index].style.display = "block";
+    }, 301);
+    projectImages[index].style.maxHeight = "0"; 
+  });
+
+  projectCard.addEventListener("mouseleave", function () {
+    projectImages[index].style.maxHeight = "200px"; 
+    projectDescriptions[index].style.display = "none"; 
+  });
+});
+
+const message = document.querySelectorAll(".messageButton");
 message.forEach((button) => {
   button.addEventListener("click", (event) => {
     const clickedButton = event.target;
@@ -132,17 +151,13 @@ message.forEach((button) => {
   });
 });
 
-const imagesWithText = document.querySelectorAll('.skillset img + p');
-
-// Attach event listeners to each image
+const imagesWithText = document.querySelectorAll(".skillset img + p");
 imagesWithText.forEach((image) => {
-  // Show the text when the mouse enters the image
-  image.previousElementSibling.addEventListener('mouseenter', () => {
-    image.style.display = 'block';
+  image.previousElementSibling.addEventListener("mouseenter", () => {
+    image.style.display = "block";
   });
 
-  // Hide the text when the mouse leaves the image
-  image.previousElementSibling.addEventListener('mouseleave', () => {
-    image.style.display = 'none';
+  image.previousElementSibling.addEventListener("mouseleave", () => {
+    image.style.display = "none";
   });
 });
