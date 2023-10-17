@@ -129,7 +129,7 @@ const projectImages = document.querySelectorAll(".project-image");
 const projectDescriptions = document.querySelectorAll(".project-description");
 
 projectCards.forEach((projectCard, index) => {
-  projectCard.addEventListener("click", function () {
+  projectCard.addEventListener("mouseenter", function () {
     setTimeout(() => {
       projectDescriptions[index].style.display = "block";
     }, 289);
