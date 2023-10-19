@@ -216,7 +216,7 @@ button {
   align-items: center;
   justify-content: center;
   background: linear-gradient(rgba(0, 0, 0, 0.02), rgba(24, 40, 54, 0.4)),
-    url("pictures/athen.png");
+    url("pictures/athen.webp");
   background-size: cover;
   background-position: center center;
   width: 100vw;
