@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-
-    <meta name="description" content="Viktor Major, a Front-end Engineer and psychology student based in Pécs, Hungary. Visit my portfolio to see my works, skills, and experiences."/>
-    <meta name="keywords" content="Frontend Engineer, Web Developer, Viktor Major, Portfolio"/>
+  <head>
+    <meta
+      name="description"
+      content="Viktor Major, a Front-end Engineer and psychology student based in Pécs, Hungary. Visit my portfolio to see my works, skills, and experiences." />
+    <meta
+      name="keywords"
+      content="Frontend Engineer, Web Developer, Viktor Major, Portfolio" />
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Viktor Major - Frontend Portfolio</title>
-    <link rel="icon" type="pictures/x-icon" href="pictures/profile.ico">
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="icon" type="pictures/x-icon" href="pictures/profile.ico" />
+    <link rel="stylesheet" href="style.css" />
     <script src="https://code.iconify.design/1/1.0.4/iconify.min.js"></script>
-   
   </head>
   <body>
     <header id="header">
-      <div class="left-box">
+      <div class="bottom-box">
         <a id="welcome-a" href="#welcome">
-          <p >welcome</p>
+          <p>welcome</p>
         </a>
         <a id="about-a" href="#about">
           <p>about me</p>
@@ -28,26 +31,36 @@
           <p>contact</p>
         </a>
       </div>
-      <div class="right-box">
-        <h1>VIKTOR MAJOR</h1>
+      <div class="top-box">
+        <div class="header-about">
+          <h1>VIKTOR MAJOR</h1>
+          <div class="social-links">
+            <a href="resume.pdf" target="_blank">Curriculum Vitae</a>
+            <a
+              href="https://www.linkedin.com/in/viktor-major-559b2a250/"
+              target="_blank"
+              >LinkedIn</a
+            >
+            <a href="https://github.com/viktormajor" target="_blank">GitHub</a>
+          </div>
+        </div>
+
         <label>
-          <input class="toggle-checkbox" type="checkbox"/>
+          <input class="toggle-checkbox" type="checkbox" />
 
           <div class="toggle-slot">
             <div class="sun-icon-wrapper">
               <div
                 class="iconify sun-icon"
                 data-icon="feather-sun"
-                data-inline="false"
-              ></div>
+                data-inline="false"></div>
             </div>
             <div class="toggle-button"></div>
             <div class="moon-icon-wrapper">
               <div
                 class="iconify moon-icon"
                 data-icon="feather-moon"
-                data-inline="false"
-              ></div>
+                data-inline="false"></div>
             </div>
           </div>
         </label>
@@ -83,191 +96,186 @@
           <h1>About Me</h1>
           <hr />
           <p>
-            My name is Major Viktor, and I aspire to have a career as a web developer. I started with a passion for psychology and worked for years with disadvantaged youth and people in crisis situations. However, I felt I wanted something new, and web development seemed like the perfect opportunity.          
+            My name is Major Viktor, and I aspire to have a career as a web
+            developer. I started with a passion for psychology and worked for
+            years with disadvantaged youth and people in crisis situations.
+            However, I felt I wanted something new, and web development seemed
+            like the perfect opportunity.
           </p>
           <p>
-            I began with the Codeberry School's basic web development course and quickly realized that this is the field where I want to express myself. Since then, I've been learning independently, and now I have professional-level knowledge of HTML, CSS, JavaScript, and Angular.          
+            I began with the Codeberry School's basic web development course and
+            quickly realized that this is the field where I want to express
+            myself. Since then, I've been learning independently, and now I have
+            professional-level knowledge of HTML, CSS, JavaScript, and Angular.
           </p>
           <p>
-            Angular is a fantastic JavaScript framework. I'm very interested in this technology and am continuously learning and growing in it. Currently, I'm working with a mentor who helps me enhance my Angular skills.          
+            Angular is a fantastic JavaScript framework. I'm very interested in
+            this technology and am continuously learning and growing in it.
+            Currently, I'm working with a mentor who helps me enhance my Angular
+            skills.
           </p>
-         
         </div>
         <div id="chat-container">
           <h1>Get2KnowBot</h1>
           <p>Choose a topic that interests you!</p>
-          <hr>
+          <hr />
           <div id="options-container">
             <button class="messageButton" onclick="sendMessage('Hello!')">
               Hello!
             </button>
-            
+
             <button
               class="messageButton"
-              onclick="sendMessage('Can you tell me about your previous experiences as a front-end developer?')"
-            >
+              onclick="sendMessage('Can you tell me about your previous experiences as a front-end developer?')">
               Previous experience
             </button>
 
             <button
               class="messageButton"
-              onclick="sendMessage('How does your psychological background influence your approach to front-end development?')"
-            >
+              onclick="sendMessage('How does your psychological background influence your approach to front-end development?')">
               Psychology background
             </button>
 
             <button
               class="messageButton"
-              onclick="sendMessage('What other relevant skills do you have?')"
-            >
-            Other skills
+              onclick="sendMessage('What other relevant skills do you have?')">
+              Other skills
             </button>
 
             <button
               class="messageButton"
-              onclick="sendMessage('What motivates you as a front-end developer?')"
-            >
-            Motivation
+              onclick="sendMessage('What motivates you as a front-end developer?')">
+              Motivation
             </button>
-
-          
 
             <button
               class="messageButton"
-              onclick="sendMessage('Where do you see yourself in five years in terms of your front-end development career?')"
-            >
-            In 5 years
+              onclick="sendMessage('Where do you see yourself in five years in terms of your front-end development career?')">
+              In 5 years
             </button>
 
-          
             <button
               class="messageButton"
-              onclick="sendMessage('How can I contact you?')"
-            >
-            Contact details
+              onclick="sendMessage('How can I contact you?')">
+              Contact details
             </button>
           </div>
-          
-          <div id="answer-container">
-            
-          </div>
+
+          <div id="answer-container"></div>
         </div>
       </div>
-        <div class="skills">
-          <div>
-            <h1>My skills</h1>
-            <hr />
-            <div class="details">
-             
-              <div class="skillset">
-                <h2>Languages:</h2>
-                <div>
-                  <div class="skill"> 
-                    <img src="pictures/html-5.png" alt="html">
-                    <p>
-                      <strong>HTML -</strong>
-                      Strong understanding and experience in using semantic HTML
-                      elements. Knowledge acquired through CodeBerry School and
-                      The Odin Project.
-                    </p>
-                  </div>
+      <div class="skills">
+        <div>
+          <h1>My skills</h1>
+          <hr />
+          <div class="details">
+            <div class="skillset">
+              <h2>Languages:</h2>
+              <div>
+                <div class="skill">
+                  <img src="pictures/html-5.png" alt="html" />
+                  <p>
+                    <strong>HTML -</strong>
+                    Strong understanding and experience in using semantic HTML
+                    elements. Knowledge acquired through CodeBerry School and
+                    The Odin Project.
+                  </p>
+                </div>
 
-                  <div class="skill">
-                    <img src="pictures/css-3.png" alt="css">
-                    <p>
-                      <strong>CSS -</strong>
-                      Proficient in creating complex layouts and adaptive designs.
-                      Trained at CodeBerry School and The Odin Project.
-                    </p>
-                  </div>
+                <div class="skill">
+                  <img src="pictures/css-3.png" alt="css" />
+                  <p>
+                    <strong>CSS -</strong>
+                    Proficient in creating complex layouts and adaptive designs.
+                    Trained at CodeBerry School and The Odin Project.
+                  </p>
+                </div>
 
-                  <div class="skill">
-                    <img src="pictures/js.png" alt="JS">
-                    <p>
-                      <strong>JavaScript -</strong>
-                      Solid grasp of fundamental JavaScript concepts, building
-                      dynamic web applications. Skills honed through The Odin
-                      Project and Harvard's CS50 course.
-                    </p>
-                  </div>
-                  <div class="skill">
-                    <img src="pictures/ts.png" alt="TS">
-                    <p>
-                      <strong>TypeScript -</strong>
-                      Experience in developing single-page applications using
-                      Angular. Understanding of advanced concepts. I learned through a Udemy course and a personal mentor.
-                    </p>
-                  </div>
+                <div class="skill">
+                  <img src="pictures/js.png" alt="JS" />
+                  <p>
+                    <strong>JavaScript -</strong>
+                    Solid grasp of fundamental JavaScript concepts, building
+                    dynamic web applications. Skills honed through The Odin
+                    Project and Harvard's CS50 course.
+                  </p>
+                </div>
+                <div class="skill">
+                  <img src="pictures/ts.png" alt="TS" />
+                  <p>
+                    <strong>TypeScript -</strong>
+                    Experience in developing single-page applications using
+                    Angular. Understanding of advanced concepts. I learned
+                    through a Udemy course and a personal mentor.
+                  </p>
                 </div>
               </div>
-              <div class="skillset">
-                <h2>Frameworks:</h2>
-                <div>
-                  <div class="skill">
-                    <img src="pictures/angular.png" alt="Angular">
-                    <p>
-                      <strong>Angular -</strong>
-                      Experience in developing single-page applications using
-                      Angular. Understanding of advanced concepts. I learned through a Udemy course and a personal mentor.
-                    </p>
-                  </div>
-                  <div class="skill">
-                    <img src="pictures/bootstrap.png" alt="Bootstrap">
-                    <p>
-                    
-                      <strong>Bootstrap -</strong>
-                      Experience with responsive design and rapid prototyping.
-                      Training from self-study.
-                    </p>
-                  </div>
+            </div>
+            <div class="skillset">
+              <h2>Frameworks:</h2>
+              <div>
+                <div class="skill">
+                  <img src="pictures/angular.png" alt="Angular" />
+                  <p>
+                    <strong>Angular -</strong>
+                    Experience in developing single-page applications using
+                    Angular. Understanding of advanced concepts. I learned
+                    through a Udemy course and a personal mentor.
+                  </p>
+                </div>
+                <div class="skill">
+                  <img src="pictures/bootstrap.png" alt="Bootstrap" />
+                  <p>
+                    <strong>Bootstrap -</strong>
+                    Experience with responsive design and rapid prototyping.
+                    Training from self-study.
+                  </p>
                 </div>
               </div>
-              <div class="skillset">
-                <h2>Technologies:</h2>
-                <div>
-                  <div class="skill">
-                    <img src="pictures/git.png" alt="GitHub">
-                    <p>
-                      <strong>Git and Github-</strong>
-                      Proficiency in version control systems, collaborative
-                      development practices. Learned through The Odin Project.
-                    </p>
-                  </div>
-                  <div class="skill">
-                    <img src="pictures/npm.png" alt="npm">
-                    <p>
-                      <strong>Npm -</strong>
-                      Understanding of package management and script running.
-                      Knowledge gained from self-study.
-                    </p>
-                  </div>
+            </div>
+            <div class="skillset">
+              <h2>Technologies:</h2>
+              <div>
+                <div class="skill">
+                  <img src="pictures/git.png" alt="GitHub" />
+                  <p>
+                    <strong>Git and Github-</strong>
+                    Proficiency in version control systems, collaborative
+                    development practices. Learned through The Odin Project.
+                  </p>
+                </div>
+                <div class="skill">
+                  <img src="pictures/npm.png" alt="npm" />
+                  <p>
+                    <strong>Npm -</strong>
+                    Understanding of package management and script running.
+                    Knowledge gained from self-study.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        
+      </div>
+
       <div class="projects" id="projects">
-       
         <h1>Works</h1>
-         <hr>
+        <hr />
         <div>
           <div class="project-card">
             <div class="project-image">
               <img src="pictures/employeehub.webp" alt="EmployeeHub" />
             </div>
-            <h2 class="project-name">EmployeeHub </h2>
+            <h2 class="project-name">EmployeeHub</h2>
             <div class="project-description">
-              
               <p>
-                This project is an application management web application developed using Angular. 
-                It helps the management of SME sector to manage their employees' data. The project is 
-                under development with permissions option being added. 
+                This project is an application management web application
+                developed using Angular. It helps the management of SME sector
+                to manage their employees' data. The project is under
+                development with permissions option being added.
               </p>
               <div class="project-links">
-                <a
-                  href="https://employee-hub-seven.vercel.app/"
-                  target="_blank"
+                <a href="https://employee-hub-seven.vercel.app/" target="_blank"
                   ><strong>Demo</strong></a
                 >
                 <a
@@ -277,7 +285,6 @@
                 >
               </div>
             </div>
-           
           </div>
           <div class="project-card">
             <div class="project-image">
@@ -285,7 +292,6 @@
             </div>
             <h2 class="project-name">Game of Life</h2>
             <div class="project-description">
-              
               <p>
                 The Game of Life is a zero-player cellular automaton game
                 devised by John Horton Conway. I developed my version using
@@ -306,7 +312,6 @@
                 >
               </div>
             </div>
-          
           </div>
           <div class="project-card">
             <div class="project-image">
@@ -314,9 +319,13 @@
             </div>
             <h2 class="project-name">2048 Game Clone</h2>
             <div class="project-description">
-              
               <p>
-                2048 Game Clone is a frontend portfolio project that presents a clone of a popular and addictive logic board game. The basic idea of the game is based on the addition of numbers. The project is implemented using HTML, CSS and JavaScript. The game logic is implemented using JavaScript and the grid is displayed on the screen using CSS.
+                2048 Game Clone is a frontend portfolio project that presents a
+                clone of a popular and addictive logic board game. The basic
+                idea of the game is based on the addition of numbers. The
+                project is implemented using HTML, CSS and JavaScript. The game
+                logic is implemented using JavaScript and the grid is displayed
+                on the screen using CSS.
               </p>
               <div class="project-links">
                 <a
@@ -331,7 +340,6 @@
                 >
               </div>
             </div>
-          
           </div>
         </div>
       </div>
@@ -341,40 +349,31 @@
         <p>If you want to contact me, feel free to drop me a message.</p>
         <form id="contact-form" onsubmit="return sendEmail(event);">
           <div class="form-group">
-              <label for="name">Your Name</label>
-              <input type="text" id="name" name="user_name" required>
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="user_name" required />
           </div>
           <div class="form-group">
-              <label for="email">Your email I can reply to</label>
-              <input type="email" id="email" name="user_email" required>
+            <label for="email">Your email I can reply to</label>
+            <input type="email" id="email" name="user_email" required />
           </div>
           <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="6" required></textarea>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
           </div>
           <div class="form-group">
-              <input type="submit" value="Send Message">
+            <input type="submit" value="Send Message" />
           </div>
         </form>
-        
-        <div class="social-links">
-          <p>You can also find me on:</p>
-          <a href="resume.pdf" target="_blank">Curriculum Vitae</a>
-          <a
-            href="https://www.linkedin.com/in/viktor-major-559b2a250/"
-            target="_blank"
-            >LinkedIn</a
-          >
-          <a href="https://github.com/viktormajor" target="_blank">GitHub</a>
-        </div>
       </div>
     </div>
-    
+
     <div class="cursor"></div>
     <div class="cursor2"></div>
     <script src="script.js"></script>
     <script src="chatbot.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
-    <script src="emailJS.js"></script>  
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script src="emailJS.js"></script>
   </body>
 </html>

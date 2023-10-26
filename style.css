@@ -150,9 +150,10 @@ body {
   color: aliceblue;
   font-size: 14px;
   background-color: aliceblue;
-  margin: 0;
+  margin: -5px 0;
   width: 100vw;
   cursor: none;
+  overflow-x: hidden;
 }
 
 .chat-entry {
@@ -234,8 +235,6 @@ button {
   mask-size: 1000px 1000px;
   mask-position: center;
 }
-
-
 
 header {
   width: 100vw;
@@ -350,10 +349,7 @@ header {
 header div {
   align-items: center;
   display: flex;
-
-
   width: 100%;
-  justify-content: space-between;
 }
 
 header h1,
@@ -364,7 +360,7 @@ header p {
 }
 header h1 {
   font-size: 30px;
-  margin: 5px 15px;
+  margin: 0 10px;
 }
 
 header a {
@@ -418,7 +414,20 @@ input:checked + .slider:before {
   transform: translateX(26px);
 }
 
-.left-box {
+.header-about {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+  text-align: left;
+  align-items: flex-start;
+
+}
+
+.header-about h1 {
+  text-align: left;
+}
+
+.bottom-box {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -431,8 +440,6 @@ input:checked + .slider:before {
 .text-1 p {
   margin: 0;
 }
-
-
 
 .large-text {
   font-family: "Montserrat", sans-serif;
@@ -449,13 +456,11 @@ input:checked + .slider:before {
   margin-bottom: -50px;
   margin-left: auto;
   position: relative;
-  
 }
 .text-2 p {
   text-shadow: 0 2px 2px #132331;
+  margin-right: 20px;
 }
-
-
 
 .text-2 p,
 .contact {
@@ -516,19 +521,18 @@ button {
 #chat-container img {
   width: 40px;
   border-radius: 50%;
-  
 }
 
 .introduction {
-  width: 65%;
+  width: 64%;
 }
 
 .skills {
-    margin: 50px 0 dsd
+  margin: 50px 0 dsd;
 }
 
 .text {
-  padding: 0 15px 0 0;;
+  padding: 0 15px 0 0;
 }
 
 .text p {
@@ -548,6 +552,7 @@ button {
 
 .details h2 {
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .details ul {
@@ -582,7 +587,6 @@ button {
   display: none;
 }
 
-
 .skillset p {
   position: absolute;
   background-color: rgba(0, 0, 0, 0.8);
@@ -609,47 +613,37 @@ button {
   transform: scale(1.15);
 }
 
-#projects>div {
+#projects > div {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 5px 5px;
 }
 
-
 .project-card {
   background: #fff;
   border-radius: 15px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
   margin: 20px 5px 50px 5px;
-    width: 29%;
+  width: 29%;
   display: flex;
   flex-direction: column;
   align-items: center;
   transition: transform 0.3s ease-in-out;
 }
 
-
-
-
-
-
 .project-image {
   width: 100%;
   height: 200px;
   overflow: hidden;
-  transition: max-height 0.3s; 
+  transition: max-height 0.3s;
   border-radius: 15px 15px 0 0;
 }
 
-
-
 .project-image img {
-  
   width: 100%;
   height: 100%;
   object-fit: cover;
-  
 }
 
 .project-description {
@@ -662,7 +656,6 @@ button {
   color: #132331;
   margin: 5px;
 }
-
 
 .project-links {
   margin-bottom: 15px;
@@ -729,19 +722,17 @@ button {
 }
 
 .social-links {
-  margin-top: 30px;
-  text-align: center;
+  text-align: left;
 }
 
 .social-links a {
-  color: #93a1bd;
   margin: 0 10px;
   text-decoration: none;
+  border-top: none;
+  font-size: 20px;
 }
 
-.social-links p {
-  text-align: center;
-}
+
 
 @media screen and (max-width: 768px) {
   #about {
@@ -786,8 +777,13 @@ button {
   }
   body {
     cursor: auto;
+    margin: ;
   }
 
+  .social-links a {
+    font-size: 11px;
+    margin: 5px;
+  }
   #scroll-border {
     height: 26px;
   }
@@ -795,7 +791,7 @@ button {
     top: -41px;
   }
   .large-text {
-    font-size: 60px;
+    font-size: 55px;
     font-weight: 700;
     letter-spacing: inherit;
   }
@@ -806,8 +802,9 @@ button {
   header p {
     margin: 5px;
     font-size: 11px;
+   
   }
-  .right-box h1 {
+  .top-box h1 {
     font-size: 24px;
   }
   .text-2 p,
@@ -843,10 +840,14 @@ button {
   .skillset {
     margin: 0px 10px;
   }
-  .skillset div {
-    display: flex;
+  .skillset>div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
   .skillset img {
     width: 18vw;
+  }
+  .details {
+    flex-direction: column;
   }
 }
