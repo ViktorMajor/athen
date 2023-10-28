@@ -30,15 +30,13 @@ window.addEventListener("scroll", function () {
   let scrollPosition =
     window.scrollY ||
     window.pageYOffset ||
-    document.body.scrollTop +
-      ((document.documentElement && document.documentElement.scrollTop) || 0);
+    document.body.scrollTop + ((document.documentElement && document.documentElement.scrollTop) || 0);
 
   let scrollBottomPosition = scrollPosition + viewportHeight;
 
   let scrollRatio = scrollBottomPosition / docHeight;
 
-  document.querySelector("#scroll-border").style.transform =
-    "scaleX(" + scrollRatio + ")";
+  document.querySelector("#scroll-border").style.transform = "scaleX(" + scrollRatio + ")";
 });
 
 window.addEventListener("DOMContentLoaded", (event) => {
@@ -133,12 +131,12 @@ projectCards.forEach((projectCard, index) => {
     setTimeout(() => {
       projectDescriptions[index].style.display = "block";
     }, 289);
-    projectImages[index].style.maxHeight = "0"; 
+    projectImages[index].style.maxHeight = "0";
   });
 
   projectCard.addEventListener("mouseleave", function () {
-    projectImages[index].style.maxHeight = "200px"; 
-    projectDescriptions[index].style.display = "none"; 
+    projectImages[index].style.maxHeight = "200px";
+    projectDescriptions[index].style.display = "none";
   });
 });
 
